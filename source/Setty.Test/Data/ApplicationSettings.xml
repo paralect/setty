@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns:c="http://setty.net/config">
+  <appSettings>
+    <add key="Name" value="Value" />
+    <add key="Email" value="some@email.com" />
+    <add key="Company" value="IBM" />
+    <add key="Year" value="2011" />
+</appSettings>
+</configuration>

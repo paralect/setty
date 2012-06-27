@@ -1,0 +1,14 @@
+*resharper.user
+[Dd]ebug/
+[Rr]elease/
+build/
+[Bb]in/
+[Oo]bj/
+[Hh]elp/
+Acropolis.suo
+EFExtensions/EFExtensions.xml
+*.suo
+*.sln.cache
+_ReSharper.*/
+*.user
+*.nupkg
