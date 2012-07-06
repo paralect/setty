@@ -2,7 +2,7 @@ using System;
 using System.Configuration;
 using Setty.Utils;
 
-namespace Setty
+namespace Setty.Engines.Xslt
 {
     public class XsltExtensionMethods
     {

@@ -9,10 +9,13 @@
 
     <appSettings file="bin\Web.user.config">
         <add key="ConfigurationId" value="Acropolis.Local" />
-        <add key="Name" value="Value" />
-        <add key="Email" value="some@email.com" />
+        <add key="Name" value="@Model["Name"]" />
+        <add key="Email" value="@Model["Email"]" />
 
-            <add key="Company" value="IBM" />
+        @if (Model["Company"] == "IBM")
+        {
+            <add key="Company" value="@Model["Company"]" />
+        }
 
     </appSettings>
 
