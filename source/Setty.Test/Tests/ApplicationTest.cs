@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using NUnit.Framework;
 using Setty.Host;
 
@@ -82,6 +83,15 @@ namespace Setty.Test.Tests
 
             Assert.AreEqual(app.ContextFolder, context);
             Assert.AreEqual(app.SettingsFolder, settings);
+        }
+
+        [Test]
+        public void ExpandoPropertiesTest()
+        {
+            var x = new ExpandoObject() as IDictionary<string, Object>;
+            x.Add("NewProp", "test");
+            dynamic model = x as dynamic;
+            Assert.AreEqual(model.NewProp, "test");
         }
     }
 }

@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Setty.Host</RootNamespace>
     <AssemblyName>Setty.Host</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -84,7 +84,15 @@
     <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RazorEngine, Version=3.0.8.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\packages\RazorEngine.3.0.8\lib\net40\RazorEngine.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\packages\RazorEngine.3.0.8\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application.cs" />
@@ -133,6 +141,6 @@
     </ItemGroup>
     <Message Text="Merging assemblies..." />
     <MakeDir Directories="$(OutputPath)\Published" />
-    <ILMerge InputAssemblies="@(InputAssemblies)" OutputFile="$(OutputPath)\Published\Setty.exe" DebugInfo="false" />
+    <ILMerge TargetPlatformVersion="v4" TargetKind="Exe" LogFile="$(OutputPath)\Published\log.txt" InputAssemblies="@(InputAssemblies)" OutputFile="$(OutputPath)\Published\Setty.exe" DebugInfo="false" />
   </Target>
 </Project>

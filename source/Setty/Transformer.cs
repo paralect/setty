@@ -10,13 +10,10 @@ namespace Setty
     {
         public List<String> Transform(String contextPath, String settingsPath = "")
         {
-            var configs = FileSearcher.Search(contextPath, new List<string>{
-                "Web.config.xslt", 
-                "App.config.xslt",
-                "NLog.config.xslt",
-            });
+            var configs = FileSearcher.Search(contextPath, SettyConstants.SearchConfigsNames);
 
             var settingsBrowser = new SettingsBrowser();
+            var transformerSelector = new TransformerSelector();
 
             foreach (var config in configs)
             {
@@ -25,8 +22,8 @@ namespace Setty
 
                 var settings = settingsBrowser.GetSettings(info, settingsPath);
 
-                var transformer = new XsltTransformer(config, output, settings);
-                transformer.Transform();
+                var transformer = transformerSelector.Select(config);
+                transformer.Transform(config, output, settings);
             }
 
             return configs;

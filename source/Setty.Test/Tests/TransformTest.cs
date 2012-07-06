@@ -3,6 +3,8 @@ using System.Configuration;
 using System.IO;
 using System.Xml;
 using NUnit.Framework;
+using Setty.Engines.MvcRazor;
+using Setty.Engines.Xslt;
 
 namespace Setty.Test.Tests
 {
@@ -29,8 +31,32 @@ namespace Setty.Test.Tests
             if (File.Exists(output))
                 File.Delete(output);
 
-            var transformer = new XsltTransformer(xslt, output, GetKeyValueCollection());
-            transformer.Transform();
+            var transformer = new XsltTransformer();
+            transformer.Transform(xslt, output, GetKeyValueCollection());
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load(output);
+
+            var nameNodes = doc.SelectNodes("configuration/appSettings/add[@key = 'Name' and @value = 'Value']");
+            var emailNodes = doc.SelectNodes("configuration/appSettings/add[@key = 'Email' and @value = 'some@email.com']");
+            var companyNodes = doc.SelectNodes("configuration/appSettings/add[@key = 'Company' and @value = 'IBM']");
+
+            Assert.AreEqual(nameNodes.Count, 1);
+            Assert.AreEqual(emailNodes.Count, 1);
+            Assert.AreEqual(companyNodes.Count, 1);
+        }
+
+        [Test]
+        public void RazorTranformTest()
+        {
+            var xslt = Path.Combine(Helper.GetDataPath(), "Sample.cshtml");
+            var output = Path.Combine(Helper.GetDataPath(), "Sample.xml");
+
+            if (File.Exists(output))
+                File.Delete(output);
+
+            var transformer = new RazorTransformer();
+            transformer.Transform(xslt, output, GetKeyValueCollection());
 
             XmlDocument doc = new XmlDocument();
             doc.Load(output);
@@ -55,8 +81,8 @@ namespace Setty.Test.Tests
 
             var expected = GetKeyValueCollection();
 
-            var transformer = new XsltTransformer(xslt, output, expected);
-            transformer.Transform();
+            var transformer = new XsltTransformer();
+            transformer.Transform(xslt, output, expected);
 
             var actual = GetApplicationSettingsFromFile(output);
 
