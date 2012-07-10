@@ -51,6 +51,92 @@ Rebuild project and open Web.config file, there should be following result:
     ...
 ```
 
+Real world Setty config files
+---------------------
+
+Below example show not only how to use Setty, but also flexibility that Setty provide by adding support
+of variables, conditions, whatever transformation language support.
+
+Razor transformation engine:
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+    <configuration>    
+
+      <appSettings>
+        <add key="Name" value="@Model["Name"]" />
+        <add key="Email" value="@Model["Email"]" />
+      </appSettings> 
+
+      <system.web>
+        <sessionState mode="SQLServer" sqlConnectionString="@Model["StateServer"]" />
+      </system.web> 
+
+      <compilation debug="@Model["Debug"]" targetFramework="4.0" /> 
+
+      @if(Model["Email"] == "Compress")
+       {
+        <httpCompression>
+          <scheme name="gzip" dll="%Windir%\system32\inetsrv\gzip.dll" />
+          <dynamicTypes>
+            <add mimeType="text/*" enabled="true" />
+            ...
+          </dynamicTypes>
+        </httpCompression> 
+         
+          ...
+
+    </configuration>
+
+       }
+
+```
+
+Xslt transformation engine:
+
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:c="http://core.com/config"> 
+
+  <xsl:template match="/">
+    <configuration>    
+
+      <appSettings>
+        <add key="Name" value="{c:Value('Name')}" />
+        <add key="Email" value="{c:Value('Email')}" />
+      </appSettings> 
+
+      <system.web>
+        <sessionState mode="SQLServer" sqlConnectionString="{c:Value('StateServer')}" />
+      </system.web> 
+
+      <compilation debug="{c:Value('Debug')}" targetFramework="4.0" /> 
+
+      <xsl:if test="c:Value('Compress') = 'true'">
+
+        <httpCompression>
+          <scheme name="gzip" dll="%Windir%\system32\inetsrv\gzip.dll" />
+          <dynamicTypes>
+            <add mimeType="text/*" enabled="true" />
+            ...
+          </dynamicTypes>
+        </httpCompression>
+
+      </xsl:if> 
+
+      ...
+
+    </configuration>
+
+  </xsl:template> 
+
+</xsl:stylesheet>
+
+```
+
 .setty file
 ---------------------
 Setty use .setty file to locate settings folder for the current environment.
@@ -70,9 +156,9 @@ D:\\MyProject\
 
      source                
          Project1Folder
-             web.config.xslt
+             web.config.cshtml
          Project2Folder
-             app.config.xslt
+             app.config.cshtml
       .setty.config
 ```
 
@@ -156,6 +242,37 @@ So developer should manually copy nuget config changes into setty config file.
 This is not always bad, because some of the nugets can do crazy things with your config and add stuff that you don't like to see in config.
 
 
-More documentation coming soon
+Manual Setty installation for .net 2.0 projects
 ---------------------
+
+In your existing project add corresponding configuration template file just near your normal configuration file (App.config or Web.config). Name this template by adding .xslt extension to the file (App.config.xslt or Web.config.xslt). Start with the following template:
+
+``` xml
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0" exclude-result-prefixes="c" 
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:c="http://setty.org/config">
+
+  <xsl:template match="/">
+      <!-- Place your configuration here -->
+  </xsl:template>
+
+</xsl:stylesheet>
+
+```
+
+Now just copy full content of App.config to this template. By doing this you will receive the same App.config file after transformation. Integration with build process (via MSBuild) If your project should produce configuration file - then add the following lines to the end of *.csproj file:
+
+``` xml
+<Target Name="Setty" BeforeTargets="PreBuildEvent">
+  <Exec Command="&quot;$(MSBuildProjectDirectory)\..\setty.exe&quot; /silent" />
+</Target>
+
+```
+
+With each build your configuration file will be produced by Setty.exe. 
+You should place Setty.exe file in the folder were your *.sln file exists (or choose any location you like and reflect this in MSBuild Exec task definition). You even can register Setty.exe in your PATH environment variable - but in this case your project will depend on system configuration.
+
+BTW: VS 2010 plugin do almost same steps.
+
   
