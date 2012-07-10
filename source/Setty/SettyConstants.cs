@@ -22,5 +22,30 @@ namespace Setty
                 };
             }
         }
+
+        public static List<string> SupportedConfigNames
+        {
+            get
+            {
+                return new List<string>()
+                {
+                    "Web.config", 
+                    "App.config",
+                    "NLog.config"
+                };
+            }
+        }
+
+        public static List<string> SettyConfigs
+        {
+            get
+            {
+                return new List<string>()
+                {
+                    ".setty", 
+                    ".core.config"
+                };
+            }
+        }
     }
 }

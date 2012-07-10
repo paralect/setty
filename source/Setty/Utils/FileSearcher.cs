@@ -12,15 +12,15 @@ namespace Setty.Utils
         /// <summary>
         /// Search files with specified names and return array of absolute paths
         /// </summary>
-        public static List<String> Search(String directory, List<String> fileNames)
+        public static List<String> Search(String directory, List<String> fileNames, bool deep = true)
         {
-            return TraverseDirectory(new DirectoryInfo(directory), fileNames);
+            return TraverseDirectory(new DirectoryInfo(directory), fileNames, deep);
         }
 
         /// <summary>
         /// Traversing of directory
         /// </summary>
-        private static List<String> TraverseDirectory(DirectoryInfo root, List<String> fileNames)
+        private static List<String> TraverseDirectory(DirectoryInfo root, List<String> fileNames, bool deep = true)
         {
             var list = new List<String>();
 
@@ -32,9 +32,12 @@ namespace Setty.Utils
                     list.Add(path);
             }
 
-            foreach (var subdir in root.GetDirectories())
+            if (deep)
             {
-                list.AddRange(TraverseDirectory(subdir, fileNames));
+                foreach (var subdir in root.GetDirectories())
+                {
+                    list.AddRange(TraverseDirectory(subdir, fileNames, deep));
+                }
             }
 
             return list;

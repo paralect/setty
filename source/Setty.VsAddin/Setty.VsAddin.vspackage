@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="7cc0d490-3f59-4e50-967b-f21140c991e3" xmlns="http://schemas.microsoft.com/dsltools/VSPackageDesigner">
+  <commandTable>
+    <rootHasCommandTable Id="5fef0364-e747-48dd-88d7-70f1b0823ab0">
+      <commandTable Id="d7cd65c8-0464-4ca6-8b82-6f5a0a202618" packageGuid="7cc0d490-3f59-4e50-967b-f21140c991e3" commandSetGuid="5fef0364-e747-48dd-88d7-70f1b0823ab0" safeProjectName="SettyVsAddin" counter="1" imagesGuid="d7cd65c8-0464-4ca6-8b82-6f5a0a202618">
+        <groups>
+          <externalGroup Id="a0dbf6bf-8d83-4225-95ec-c18d6c20a957" name="Custom" idNumeric="5" parentData="guidSHLMainMenu,IDG_VS_CTXT_PROJECT_ADD_ITEMS,Group">
+            <buttons>
+              <groupBaseReferencesButtons Id="4b45c25a-d603-4a18-b155-017d8c37f7b0">
+                <buttonMoniker Id="effae78f-44bc-4a7e-bf30-a230bd76569f" />
+              </groupBaseReferencesButtons>
+            </buttons>
+          </externalGroup>
+        </groups>
+        <buttons>
+          <commandTableHasButtons Id="c6c0cbb7-3450-4d63-b97d-5b645ca6acd4">
+            <button Id="effae78f-44bc-4a7e-bf30-a230bd76569f" name="btnAddSetty" idNumeric="4" buttonText="Add Setty..." menuText="Add Setty..." commandName="cmdidbtnAddSetty" toolTipText="Add Setty to the project" mod1="0" mod2="0" visibilityConstraints="0" icon="Icon.bmp" commandFlags="0">
+              <toolWindows>
+                <buttonReferencesToolWindows Id="f8a2c622-3f1c-4b88-8393-56531a624b94">
+                  <toolWindowMoniker Id="cb06495c-4950-4b33-a71b-1b848cff1eaf" />
+                </buttonReferencesToolWindows>
+              </toolWindows>
+            </button>
+          </commandTableHasButtons>
+        </buttons>
+      </commandTable>
+    </rootHasCommandTable>
+  </commandTable>
+  <userInterface>
+    <rootHasUserInterface Id="3705fb56-3b9a-422e-a40b-bdc0491a3c05">
+      <userInterface Id="d3e2860b-7550-42b2-beb9-34d31f1feaee">
+        <toolWindows>
+          <userInterfaceHasToolWindows Id="0ae8fa62-b0bf-4da8-92a1-04d1698e3a59">
+            <toolWindow Id="cb06495c-4950-4b33-a71b-1b848cff1eaf" name="SettyConfiguration" idNumeric="6" caption="SettyConfiguration" userCodeGenerated="true" transient="false" multiInstance="false" visibilityConstraints="0" guid="d63f139c-580a-4bc8-96f9-5da3bd97ea04" />
+          </userInterfaceHasToolWindows>
+        </toolWindows>
+      </userInterface>
+    </rootHasUserInterface>
+  </userInterface>
+</root>

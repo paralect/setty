@@ -92,6 +92,7 @@
     <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\packages\RazorEngine.3.0.8\lib\net40\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +139,8 @@
       <InputAssemblies Include="$(OutputPath)\Setty.Host.exe" />
       <InputAssemblies Include="$(OutputPath)\Setty.dll" />
       <InputAssemblies Include="$(OutputPath)\Setty.Settings.dll" />
+      <InputAssemblies Include="$(OutputPath)\RazorEngine.dll" />
+      <InputAssemblies Include="$(OutputPath)\System.Web.Razor.dll" />
     </ItemGroup>
     <Message Text="Merging assemblies..." />
     <MakeDir Directories="$(OutputPath)\Published" />

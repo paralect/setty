@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<vSPackageDesignerDiagram dslVersion="1.0.0.0" Id="64261ae1-5673-446d-ad2f-d3ca31705e72" absoluteBounds="0, 0, 12.875, 8.5" name="Setty.VsAddin">
+  <rootMoniker Id="7cc0d490-3f59-4e50-967b-f21140c991e3" />
+  <nestedChildShapes>
+    <commandTableSwimlane Id="dab56cf0-97d0-49c3-976d-f32fdb7fafcf" absoluteBounds="0, 0, 9.125, 8.5">
+      <commandTableMoniker Id="d7cd65c8-0464-4ca6-8b82-6f5a0a202618" />
+      <nestedChildShapes>
+        <buttonShape Id="5d8c0b79-fef6-4d92-9161-1597b773b37c" absoluteBounds="5.5, 2.25, 1.5, 0.625">
+          <buttonMoniker Id="effae78f-44bc-4a7e-bf30-a230bd76569f" />
+        </buttonShape>
+        <externalGroupShape Id="841ee86b-1f19-42a1-93ee-9644153af955" absoluteBounds="5.375, 0.875, 1.5, 0.625">
+          <externalGroupMoniker Id="a0dbf6bf-8d83-4225-95ec-c18d6c20a957" />
+        </externalGroupShape>
+        <containsConnector Id="5649e9b6-7142-445a-a111-920ef22785f9" edgePoints="[(6.1875 : 1.5); (6.1875 : 2.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+          <groupBaseReferencesButtonsMoniker Id="4b45c25a-d603-4a18-b155-017d8c37f7b0" />
+          <nodes>
+            <externalGroupShapeMoniker Id="841ee86b-1f19-42a1-93ee-9644153af955" />
+            <buttonShapeMoniker Id="5d8c0b79-fef6-4d92-9161-1597b773b37c" />
+          </nodes>
+        </containsConnector>
+      </nestedChildShapes>
+    </commandTableSwimlane>
+    <toolwindowSwimlane Id="5f5d62ef-9a4e-4846-acb6-584d4e59bdde" absoluteBounds="9.125, 0, 3.75, 8.5">
+      <userInterfaceMoniker Id="d3e2860b-7550-42b2-beb9-34d31f1feaee" />
+      <nestedChildShapes>
+        <wpfToolWindowShape Id="6ad99ced-308c-45f4-8189-67ff509f9f75" absoluteBounds="11.125, 3.375, 1.5, 0.625">
+          <toolWindowMoniker Id="cb06495c-4950-4b33-a71b-1b848cff1eaf" />
+        </wpfToolWindowShape>
+      </nestedChildShapes>
+    </toolwindowSwimlane>
+    <launches Id="747f3c00-8272-4b60-8836-455f67da85db" edgePoints="[(7 : 2.78125); (11.875 : 2.78125); (11.875 : 3.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <buttonReferencesToolWindowsMoniker Id="f8a2c622-3f1c-4b88-8393-56531a624b94" />
+      <relativeChildShapes />
+      <nodes>
+        <buttonShapeMoniker Id="5d8c0b79-fef6-4d92-9161-1597b773b37c" />
+        <wpfToolWindowShapeMoniker Id="6ad99ced-308c-45f4-8189-67ff509f9f75" />
+      </nodes>
+    </launches>
+  </nestedChildShapes>
+</vSPackageDesignerDiagram>

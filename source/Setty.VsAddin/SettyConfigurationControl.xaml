@@ -1,0 +1,51 @@
+<UserControl x:Class="Setty.VsAddin.SettyConfigurationControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vsfx="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.10.0"
+             mc:Ignorable="d" 
+             Width="Auto"
+             Height="Auto"
+             MinWidth="500" MinHeight="100"
+             Name="SettyConfiguration"
+             Background="{DynamicResource {x:Static vsfx:VsBrushes.ToolWindowBackgroundKey}}">
+    <Grid MinWidth="500" MinHeight="100">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="25" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="35" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <DockPanel  HorizontalAlignment="Stretch" Width="Auto" Background="#FFF2F2F2">
+                    <ToolBar DockPanel.Dock="Left"  BorderBrush="Gray" Width="auto" >
+                        <Label Content="Active Project:" Height="28" Name="label5" />
+                        <ComboBox Height="23" Name="cbActiveProject" Width="Auto" HorizontalAlignment="Stretch" MinWidth="205" />
+                        <Label Content="Engine:" Height="28" Name="label6" />
+                        <ComboBox Height="23" Name="cbEngine" Width="120" MinWidth="100" />
+                    </ToolBar>
+
+                </DockPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Label Content="Select path to global settings:" Height="28" Name="label7" />
+            </Grid>
+            <Grid Grid.Row="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                    <TextBox HorizontalAlignment="Left" Height="23" Width="auto" MinWidth="420" Name="textBoxSettingsPath" Text=""  />
+                    <Button HorizontalAlignment="Left" Content="Browse" Height="23" Margin="5, 0,5,0" Name="btnChangePath" Width="51" Click="btnChangePath_Click"  />
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="3" Margin="0,5,5,0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                    <Button Content="Add Setty" Height="23" Name="btnAddSetty" Width="65" Click="btnAddSetty_Click" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

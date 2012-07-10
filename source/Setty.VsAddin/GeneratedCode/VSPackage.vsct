@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--  This is the file that defines the actual layout and type of the commands.
+        It is divided in different sections (e.g. command definition, command
+        placement, ...), with each defining a specific set of properties.
+        See the comment before each section for more details about how to
+        use it. -->
+
+  <!--  The VSCT compiler (the tool that translates this file into the binary 
+        format that VisualStudio will consume) has the ability to run a preprocessor 
+        on the vsct file; this preprocessor is (usually) the C++ preprocessor, so 
+        it is possible to define includes and macros with the same syntax used 
+        in C++ files. Using this ability of the compiler here, we include some files 
+        defining some of the constants that we will use inside the file. -->
+
+  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h"/>
+
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h"/>
+
+  <!--Definition of some VSCT specific constants. In this sample we use it for the IDs inside the guidOfficeIcon group. -->
+  <Extern href="msobtnid.h"/>
+
+  <Extern href="VSDbgCmd.h" />
+  <Extern href="VsDebugGuids.h"/>
+
+  
+  <!--The Commands section is where we the commands, menus and menu groups are defined.
+      This section uses a Guid to identify the package that provides the command defined inside it. -->
+  <Commands package="guidPackage">
+  
+
+  <Buttons>
+    <Button guid="guidSettyVsAddinCommandSet" id="btnAddSetty" priority="0x0100">
+				<Icon guid="Icon.bmpGuid" id="Icon.bmpId" />
+				<Strings>
+            <CommandName>cmdidbtnAddSetty</CommandName>
+            <ButtonText>Add Setty...</ButtonText>
+            <MenuText>Add Setty...</MenuText>
+            <ToolTipText>Add Setty to the project</ToolTipText>
+		    </Strings>
+	  </Button>
+	</Buttons>
+
+
+  <Bitmaps>
+    <Bitmap guid="Icon.bmpGuid" href="..\Button Bitmaps\Icon.bmp" usedList="Icon.bmpId" />
+  </Bitmaps>
+
+  </Commands>
+
+  <CommandPlacements>
+     <CommandPlacement guid="guidSettyVsAddinCommandSet" id="btnAddSetty" priority="0x0100"> 
+	         <Parent guid="guidSHLMainMenu" id="IDG_VS_CTXT_PROJECT_ADD_ITEMS" />
+		   </CommandPlacement> 
+		</CommandPlacements>
+  
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidPackage" value="{7cc0d490-3f59-4e50-967b-f21140c991e3}" />
+    
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidSettyVsAddinCommandSet" value="{5fef0364-e747-48dd-88d7-70f1b0823ab0}">
+	     <IDSymbol name="btnAddSetty" value="0x0004" />
+	  </GuidSymbol>
+	     <GuidSymbol name="Icon.bmpGuid" value="{fe174afa-fb34-40ca-9014-7e67b08bd04b}">
+				<IDSymbol name="Icon.bmpId" value="1" />
+			</GuidSymbol>
+	</Symbols>
+
+</CommandTable>
+

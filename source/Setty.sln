@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{11053249-6206-4AFE-B838-3BB949B2BBB5}"
+	ProjectSection(SolutionItems) = preProject
+		IntegrationTests.testsettings = IntegrationTests.testsettings
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Setty.Settings.Test", "Setty.Settings.Test\Setty.Settings.Test.csproj", "{707CAD17-7134-4C17-B18B-D7F66F7F3725}"
 EndProject
@@ -14,6 +17,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Setty.Test", "Setty.Test\Setty.Test.csproj", "{5B813D81-B093-4B37-A57C-B3E977B21333}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Setty.Test.Project", "Setty.Test.Project\Setty.Test.Project.csproj", "{E6304B18-80D8-4A83-B4FB-A2AE45A1D2CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Setty.VsAddin", "Setty.VsAddin\Setty.VsAddin.csproj", "{2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +126,21 @@ Global
 		{E6304B18-80D8-4A83-B4FB-A2AE45A1D2CF}.Release|Mixed Platforms.Build.0 = Release|x86
 		{E6304B18-80D8-4A83-B4FB-A2AE45A1D2CF}.Release|x86.ActiveCfg = Release|x86
 		{E6304B18-80D8-4A83-B4FB-A2AE45A1D2CF}.Release|x86.Build.0 = Release|x86
+		{2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2}.Publish|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2}.Publish|Any CPU.Build.0 = Release|Any CPU
+		{2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2}.Publish|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2}.Publish|Mixed Platforms.Build.0 = Release|Any CPU
+		{2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2}.Publish|x86.ActiveCfg = Release|Any CPU
+		{2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
