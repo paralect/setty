@@ -83,13 +83,12 @@ Razor transformation engine:
             ...
           </dynamicTypes>
         </httpCompression> 
-         
+       }     
           ...
 
     </configuration>
 
-       }
-
+      
 ```
 
 Xslt transformation engine:
@@ -242,7 +241,7 @@ So developer should manually copy nuget config changes into setty config file.
 This is not always bad, because some of the nugets can do crazy things with your config and add stuff that you don't like to see in config.
 
 
-Manual Setty installation for .net 2.0 projects
+Manual Setty Installation (Based on xslt transformation engine)
 ---------------------
 
 In your existing project add corresponding configuration template file just near your normal configuration file (App.config or Web.config). Name this template by adding .xslt extension to the file (App.config.xslt or Web.config.xslt). Start with the following template:
