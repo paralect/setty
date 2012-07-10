@@ -15,7 +15,7 @@ namespace Setty.Settings
         /// <summary>
         /// Name of config file
         /// </summary>
-        public const String ConfigFile = ".setty.config";
+        public const String ConfigFile = ".setty";
 
         /// <summary>
         /// Legacy name of the config file
@@ -71,7 +71,7 @@ namespace Setty.Settings
         /// <summary>
         /// By given directory find path to ConfigFile
         /// </summary>
-        /// <param name="directoryPath">Folder from which start search, it will go deeply and deeply until not find first .setty.config or .core.config</param>
+        /// <param name="directoryPath">Folder from which start search, it will go deeply and deeply until not find first .setty or .core.config</param>
         /// <returns>Path to ConfigFile</returns>
         private String FindPathToConfigFile(string directoryPath)
         {
@@ -83,7 +83,7 @@ namespace Setty.Settings
                 var coreConfigurationFilePath = Path.Combine(current.FullName, ConfigFile);
                 var legacyCoreConfigurationFilePath = Path.Combine(current.FullName, ConfigFileLegacy);
 
-                // First read from .setty.config
+                // First read from .setty
                 if (File.Exists(coreConfigurationFilePath))
                     return coreConfigurationFilePath;
 
@@ -94,7 +94,7 @@ namespace Setty.Settings
                 current = current.Parent;
             }
 
-            throw new SettingsFolderNotFound(String.Format("Settings folder was not found. Make sure that you have .setty.config file in the current folder (or in any ancestor folder)."));
+            throw new SettingsFolderNotFound(String.Format("Settings folder was not found. Make sure that you have .setty file in the current folder (or in any ancestor folder)."));
         }
 
         /// <summary>
