@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet'
+        type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Setty by paralect</title>
+</head>
+<body>
+    <div></div>
+    <header>
+      <div class="inner">
+        <h1>Setty</h1>
+        <h2>Setty component solves two common problems - management of key-value settings and management of .NET config files (App.config and Web.config)</h2>
+        <a href="https://github.com/paralect/setty" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+    <div id="content-wrapper">
+        <div class="inner clearfix">
+            <section id="main-content">
+          <h2>Overview</h2>
+
+<p>Setty was designed to help manage project key/value settings. .NET config files differ for different deployment configurations. There should be a way to manage config files for different deployment configurations. Setty chose centralized approach by generating *.config files based on some template language. Currently there is support for razor and xslt transform engines. </p>
+
+<h2>Quick start </h2>
+
+<p>The best way to getting started with Setty is download plugin for visual studio 2010. And install setty in one click.
+Plugin will configure everything for you.</p>
+
+<ol>
+<li>Open Visual Studio and navigate to Tools -&gt; Extentions Manager. </li>
+<li>Search in Online Gallery for work 'Setty' and double click to install (reload Visual Studio after this). Or alternatively download extension <a href="https://github.com/downloads/paralect/setty/Setty.VsAddin.vsix">Setty VS 2010 addin</a> 
+<img src="images/add_vs_extention.png" />
+</li>
+<li>Create new project (or open existing one), right click on it. In context menu navigate to Add -&gt; Add Setty... 
+<img src="images/add_setty.png" />
+</li>
+<li>Plugin ask you where to create global settings folder. Usually this folder is on top of solution folder. 
+<img src="images/browse_settings_folder.png" />
+</li>
+<li>Congatulations! You are done. Now you can start use Setty.
+<img src="images/setty_added.png" />
+</li>
+<p> By default setty use <a href="http://www.microsoft.com/web/category/razor">Razor syntax</a> to transform setty config (Web.config.cshtml on above screen). 
+To try it out navigate to the settings folder which you've specified on 4th step. There you'll find App.config file. This file is a simple storage of key/value settings.
+Open it and add new setting:
+<img src="images/add_setting.png" />
+After this open your setty config file (In my case it's Web.config.cshtml) and 
+
+</p>
+
+</ol>
+        </section>
+            <aside id="sidebar">
+          <a href="https://github.com/downloads/paralect/setty/Setty.exe" class="button">
+            <small>Download</small>
+             Setty
+          </a>
+          <a href="https://github.com/downloads/paralect/setty/Setty.VsAddin.vsix" class="button">
+            <small>Download</small>            
+             VS 2010 plugin
+          </a>
+          <p class="repo-owner"><a href="https://github.com/paralect/setty"></a>Setty is maintained by <a href="http://paralect.com">paralect</a>.</p>
+        </aside>
+        </div>
+    </div>
+</body>
+</html>
