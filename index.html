@@ -15,6 +15,7 @@
     <title>Setty by paralect</title>
 </head>
 <body>
+    <div></div>
     <header>
       <div class="inner">
         <h1>Setty</h1>
@@ -36,10 +37,26 @@ Plugin will configure everything for you.</p>
 
 <ol>
 <li>Open Visual Studio and navigate to Tools -&gt; Extentions Manager. </li>
-<li>Search in Online Gallery for work 'Setty' and double click to install (reload Visual Studio after this). Or alternatively download extension <a href="https://github.com/downloads/paralect/setty/Setty.VsAddin.vsix">Setty VS 2010 addin</a> </li>
-<li>Create new project (or open existing one), right click on it. In context menu navigate to Add -&gt; Add Setty... </li>
-<li>Plugin ask you where to create global settings folder. Usually this folder is on top of solution folder. </li>
-<li>That's it.</li>
+<li>Search in Online Gallery for work 'Setty' and double click to install (reload Visual Studio after this). Or alternatively download extension <a href="https://github.com/downloads/paralect/setty/Setty.VsAddin.vsix">Setty VS 2010 addin</a> 
+<img src="images/add_vs_extention.png" />
+</li>
+<li>Create new project (or open existing one), right click on it. In context menu navigate to Add -&gt; Add Setty... 
+<img src="images/add_setty.png" />
+</li>
+<li>Plugin ask you where to create global settings folder. Usually this folder is on top of solution folder. 
+<img src="images/browse_settings_folder.png" />
+</li>
+<li>Congatulations! You are done. Now you can start use Setty.
+<img src="images/setty_added.png" />
+</li>
+<p> By default setty use <a href="http://www.microsoft.com/web/category/razor">Razor syntax</a> to transform setty config (Web.config.cshtml on above screen). 
+To try it out navigate to the settings folder which you've specified on 4th step. There you'll find App.config file. This file is a simple storage of key/value settings.
+Open it and add new setting:
+<img src="images/add_setting.png" />
+After this open your setty config file (In my case it's Web.config.cshtml) and 
+
+</p>
+
 </ol>
         </section>
             <aside id="sidebar">
@@ -51,8 +68,7 @@ Plugin will configure everything for you.</p>
             <small>Download</small>            
              VS 2010 plugin
           </a>
-
-          <p class="repo-owner"><a href="https://github.com/paralect/setty"></a> is maintained by <a href="https://github.com/paralect">paralect</a>.</p>
+          <p class="repo-owner"><a href="https://github.com/paralect/setty"></a>Setty is maintained by <a href="http://paralect.com">paralect</a>.</p>
         </aside>
         </div>
     </div>
