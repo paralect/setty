@@ -1,0 +1,11 @@
+*resharper.user
+[Bb]in/
+[Oo]bj/
+EFExtensions/EFExtensions.xml
+*.suo
+*.sln.cache
+_ReSharper.*/
+*.user
+*.nupkg
+*.vs10x
+*.orig
