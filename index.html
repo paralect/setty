@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Setty by paralect</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Setty</h1>
+        <h2>Setty component solves two common problems - management of key-value settings and management of .NET config files (App.config and Web.config)</h2>
+        <a href="https://github.com/paralect/setty" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h2>Overview</h2>
+
+<p>Setty was designed to help manage project key/value settings. .NET config files differ for different deployment configurations. There should be a way to manage config files for different deployment configurations. Setty chose centralized approach by generating *.config files based on some template language. Currently there is support for razor and xslt transform engines. </p>
+
+<p>Setty with razor syntax require .net 4.0+. .net 2.0 version currently support only xslt transformation engine and has to be installed manually. See documentation below for details</p>
+
+<h2>Installation guide</h2>
+
+<p>The best way to getting started with Setty is download plugin for visual studio 2010. And install setty in one click.
+Plugin will configure everything for you.</p>
+
+<ol>
+<li>Open Visual Studio and navigate to Tools -&gt; Extentions Manager. </li>
+<li>Search in Online Gallery for work 'Setty' and double click to install (reload Visual Studio after this). Or alternatively download extension <a href="https://github.com/downloads/paralect/setty/Setty.VsAddin.vsix">Setty VS 2010 addin</a> 
+<img src="http://paralect.github.com/setty/images/add_vs_extention.png" alt="add vs extension">
+</li>
+<li>Create new project (or open existing one), right click on it. In context menu navigate to Add -&gt; Add Setty... 
+<img src="http://paralect.github.com/setty/images/images/add_setty.png" alt="add vs extension">
+</li>
+<li>Plugin ask you where to create global settings folder. Usually this folder is on top of solution folder. 
+<img src="http://paralect.github.com/setty/images/browse_settings_folder.png" alt="add vs extension">
+</li>
+<li>Congratulations! You are done. Now you can start use Setty.</li>
+</ol><h2>Quick start</h2>
+
+<p>By default setty use <a href="http://www.microsoft.com/web/category/razor">Razor syntax</a> to transform setty config (Web.config.cshtml on above screen). 
+  Settings Folder is a simple concept of hierarchical configuration system well understood by many ASP.NET developers. The more deeper your configuration file is located the more precedence your configuration file has comparing to outer configuration files. This is a simple way to overwrite outer configuration. Here is example from real world:</p>
+
+<p><img src="http://paralect.github.com/setty/images/settings_folder.png" alt="example"></p>
+
+<p>To try it out navigate to the settings folder which you've specified on 4th step. There you'll find App.config file. This file is a simple storage of key/value settings. Settings Folder has only one configuration file named App.config. Content of this file is a plain .NET appSettings section. </p>
+
+<p>Open it and add new setting:</p>
+
+<div class="highlight">
+<pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;configuration&gt;</span>
+  <span class="nt">&lt;appSettings&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">"hello"</span> <span class="na">value=</span><span class="s">"Hello World"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/appSettings&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre>
+</div>
+
+
+<p>After this open your setty config file (In my case it's Web.config.cshtml) and use setting as follow:</p>
+
+<div class="highlight">
+<pre><span class="nt">&lt;configuration&gt;</span>
+  <span class="nt">&lt;appSettings&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">"MyFirstSetting"</span> <span class="na">value=</span><span class="s">"@Model["</span><span class="err">hello"]"</span> <span class="nt">/&gt;</span>
+    ...
+</pre>
+</div>
+
+
+<p>Rebuild project and open Web.config file, there should be following result:</p>
+
+<div class="highlight">
+<pre><span class="nt">&lt;configuration&gt;</span>
+  <span class="nt">&lt;appSettings&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">"MyFirstSetting"</span> <span class="na">value=</span><span class="s">"Hello World"</span> <span class="nt">/&gt;</span>
+    ...
+</pre>
+</div>
+
+
+<h2>Real world Setty config files</h2>
+
+<p>Below example show not only how to use Setty, but also flexibility that Setty provide by adding support
+of variables, conditions, whatever transformation language support.</p>
+
+<p>Razor transformation engine:</p>
+
+<div class="highlight">
+<pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+    <span class="nt">&lt;configuration&gt;</span>    
+
+      <span class="nt">&lt;appSettings&gt;</span>
+        <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">"Name"</span> <span class="na">value=</span><span class="s">"@Model["</span><span class="err">Name"]"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">"Email"</span> <span class="na">value=</span><span class="s">"@Model["</span><span class="err">Email"]"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/appSettings&gt;</span> 
+
+      <span class="nt">&lt;system.web&gt;</span>
+        <span class="nt">&lt;sessionState</span> <span class="na">mode=</span><span class="s">"SQLServer"</span> <span class="na">sqlConnectionString=</span><span class="s">"@Model["</span><span class="err">StateServer"]"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/system.web&gt;</span> 
+
+      <span class="nt">&lt;compilation</span> <span class="na">debug=</span><span class="s">"@Model["</span><span class="err">Debug"]"</span> <span class="na">targetFramework=</span><span class="s">"4.0"</span> <span class="nt">/&gt;</span> 
+
+      @if(Model["Email"] == "Compress")
+       {
+        <span class="nt">&lt;httpCompression&gt;</span>
+          <span class="nt">&lt;scheme</span> <span class="na">name=</span><span class="s">"gzip"</span> <span class="na">dll=</span><span class="s">"%Windir%\system32\inetsrv\gzip.dll"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;dynamicTypes&gt;</span>
+            <span class="nt">&lt;add</span> <span class="na">mimeType=</span><span class="s">"text/*"</span> <span class="na">enabled=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+            ...
+          <span class="nt">&lt;/dynamicTypes&gt;</span>
+        <span class="nt">&lt;/httpCompression&gt;</span> 
+       }     
+          ...
+
+    <span class="nt">&lt;/configuration&gt;</span>
+
+
+</pre>
+</div>
+
+
+<p>Xslt transformation engine:</p>
+
+<div class="highlight">
+<pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">version=</span><span class="s">"1.0"</span>
+                <span class="na">xmlns:xsl=</span><span class="s">"http://www.w3.org/1999/XSL/Transform"</span>
+                <span class="na">xmlns:c=</span><span class="s">"http://core.com/config"</span><span class="nt">&gt;</span> 
+
+  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"/"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;configuration&gt;</span>    
+
+      <span class="nt">&lt;appSettings&gt;</span>
+        <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">"Name"</span> <span class="na">value=</span><span class="s">"{c:Value('Name')}"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">"Email"</span> <span class="na">value=</span><span class="s">"{c:Value('Email')}"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/appSettings&gt;</span> 
+
+      <span class="nt">&lt;system.web&gt;</span>
+        <span class="nt">&lt;sessionState</span> <span class="na">mode=</span><span class="s">"SQLServer"</span> <span class="na">sqlConnectionString=</span><span class="s">"{c:Value('StateServer')}"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/system.web&gt;</span> 
+
+      <span class="nt">&lt;compilation</span> <span class="na">debug=</span><span class="s">"{c:Value('Debug')}"</span> <span class="na">targetFramework=</span><span class="s">"4.0"</span> <span class="nt">/&gt;</span> 
+
+      <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">"c:Value('Compress') = 'true'"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;httpCompression&gt;</span>
+          <span class="nt">&lt;scheme</span> <span class="na">name=</span><span class="s">"gzip"</span> <span class="na">dll=</span><span class="s">"%Windir%\system32\inetsrv\gzip.dll"</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;dynamicTypes&gt;</span>
+            <span class="nt">&lt;add</span> <span class="na">mimeType=</span><span class="s">"text/*"</span> <span class="na">enabled=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+            ...
+          <span class="nt">&lt;/dynamicTypes&gt;</span>
+        <span class="nt">&lt;/httpCompression&gt;</span>
+
+      <span class="nt">&lt;/xsl:if&gt;</span> 
+
+      ...
+
+    <span class="nt">&lt;/configuration&gt;</span>
+
+  <span class="nt">&lt;/xsl:template&gt;</span> 
+
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+
+</pre>
+</div>
+
+
+<h2>.setty file</h2>
+
+<p>Setty use .setty file to locate settings folder for the current environment.</p>
+
+<p>1.Usually you will need only one .setty for the all solution projects.</p>
+
+<p>Without any special arguments setty.exe will start search for .setty file at the current directory (where *.config.cshtml located). If .setty will not find it will look into the parent folder, therefore if you want to have one .setty for the all projects and you have project structure like below, you can just put .setty under source folder and it will be used to transform all solution configs:</p>
+
+<div class="highlight">
+<pre>D:\\MyProject\
+     settings
+      App.config
+         Stage
+             App.config
+         Production
+             App.config
+
+     source                
+         Project1Folder
+             web.config.cshtml
+         Project2Folder
+             app.config.cshtml
+      .setty.config
+</pre>
+</div>
+
+
+<p>2.Separate .setty file for particular project</p>
+
+<p>To use separate settings for particular project you can just put .setty near *.config.cshtml and it will be used to locate settings.</p>
+
+<p>3.Content of the .setty file</p>
+
+<p>Path file can contains FULL or RELATIVE path to the settings folder.
+Examples of path file content(based on above project structure):</p>
+
+<ul>
+<li>
+<code>D:\\MyProject\settings\Stage</code> </li>
+<li>
+<code>../settings</code> (relative path should not starts from slash, because it will be treat as absolute path)</li>
+</ul><h2>Setty and version of control </h2>
+
+<p>The .setty file should not be under your source control system, because in most situations developers and different environments has different paths within .setty and you will continuously merge this file. 
+Same apply for any .config file, because setty always regenerate it you need add it to ignore as well.</p>
+
+<h2>How to install the Setty project</h2>
+
+<p>Before run solution you have to install some tools. If you have some of them just skip step.</p>
+
+<ol>
+<li>
+<p>Clone project from github</p>
+
+<p><code>git clone git@github.com:paralect/setty.git</code></p>
+</li>
+<li><p><a href="http://www.microsoft.com/en-us/download/details.aspx?id=17630">Download</a> and install ILMerge. It used to merge some external libraries into single .exe file.</p></li>
+<li><p><a href="https://github.com/downloads/loresoft/msbuildtasks/MSBuild.Community.Tasks.v1.4.0.42.msi"> Download </a> and install MsBuild community tasks.
+Above three steps should be enough to open and compile all solution projects except VS addin project.</p></li>
+<li><p>To open Setty.VsAddin project <a href="http://www.microsoft.com/en-us/download/details.aspx?id=21835">download</a> and install visual studio sdk.
+<a href="http://visualstudiogallery.msdn.microsoft.com/e9f40a57-3c9a-4d61-b3ec-1640c59549b3/">Donwload</a> and install VSPackage Builder plugin</p></li>
+<li><p>Restart Visual studio and open solution again. Congratulations! You are done!</p></li>
+</ol><h2>Extend Setty with you favorite transformation language</h2>
+
+<p>Fork setty project, install it first.</p>
+
+<p>To add new transformation language into the project open Setty Project within Setty solution and implement ITransformer interface (put realization and all related files under Engines folder)
+This interface has one method <code>void Transform(String inputFilePath, String outputFilePath, KeyValueConfigurationCollection settings)</code> 
+Transformer accept path to the config file, transform it with key/value settings and save result to the output config file. 
+Also in interface you need to specify <code>ConfigExtention</code> for a new engine (for example: xslt, cshtml). Setty will automatically choose transformer by ConfigExtention
+Once interface implemented add new engine config files names into <code>SettyConstants.SearchConfigsNames</code>. </p>
+
+<p>All externals libs should be merged into the Setty.dll and Setty.exe files. To add them unload Setty project and modify following section at the bottom of .csproj file. After this do the same at Setty.Host project.</p>
+
+<div class="highlight">
+<pre><span class="nt">&lt;Target</span> <span class="na">Name=</span><span class="s">"AfterBuild"</span> <span class="na">Condition=</span><span class="s">"$(Configuration) == 'Publish'"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;ItemGroup&gt;</span>
+      <span class="nt">&lt;InputAssemblies</span> <span class="na">Include=</span><span class="s">"$(OutputPath)\Setty.dll"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;InputAssemblies</span> <span class="na">Include=</span><span class="s">"$(OutputPath)\Setty.Settings.dll"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;InputAssemblies</span> <span class="na">Include=</span><span class="s">"$(OutputPath)\RazorEngine.dll"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;InputAssemblies</span> <span class="na">Include=</span><span class="s">"$(OutputPath)\System.Web.Razor.dll"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/ItemGroup&gt;</span>
+    <span class="nt">&lt;Message</span> <span class="na">Text=</span><span class="s">"Merging assemblies..."</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;MakeDir</span> <span class="na">Directories=</span><span class="s">"$(OutputPath)\Published"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;ILMerge</span> <span class="na">TargetPlatformVersion=</span><span class="s">"v4"</span> <span class="na">InputAssemblies=</span><span class="s">"@(InputAssemblies)"</span> <span class="na">OutputFile=</span><span class="s">"$(OutputPath)\Published\Setty.dll"</span> <span class="na">DebugInfo=</span><span class="s">"false"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/Target&gt;</span>
+</pre>
+</div>
+
+
+<p>Conratulations! You are done. <a href="https://help.github.com/articles/using-pull-requests/">Send pull request</a> to us and we will merge it in.</p>
+
+<h2>Setty and nuget</h2>
+
+<p>Some nugets automatically can modify your config file, but because of setty regenerate config files you can loose these changes on next build.
+So developer should manually copy nuget config changes into setty config file. </p>
+
+<p>This is not always bad, because some of the nugets can do crazy things with your config and add stuff that you don't like to see in config.</p>
+
+<h2>Manual Setty Installation (Based on xslt transformation engine)</h2>
+
+<p>In your existing project add corresponding configuration template file just near your normal configuration file (App.config or Web.config). Name this template by adding .xslt extension to the file (App.config.xslt or Web.config.xslt). Start with the following template:</p>
+
+<div class="highlight">
+<pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;xsl:stylesheet</span> <span class="na">version=</span><span class="s">"1.0"</span> <span class="na">exclude-result-prefixes=</span><span class="s">"c"</span> 
+                <span class="na">xmlns:xsl=</span><span class="s">"http://www.w3.org/1999/XSL/Transform"</span>
+                <span class="na">xmlns:c=</span><span class="s">"http://setty.org/config"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"/"</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- Place your configuration here --&gt;</span>
+  <span class="nt">&lt;/xsl:template&gt;</span>
+
+<span class="nt">&lt;/xsl:stylesheet&gt;</span>
+
+</pre>
+</div>
+
+
+<p>Now just copy full content of App.config to this template. By doing this you will receive the same App.config file after transformation. Integration with build process (via MSBuild) If your project should produce configuration file - then add the following lines to the end of *.csproj file:</p>
+
+<div class="highlight">
+<pre><span class="nt">&lt;Target</span> <span class="na">Name=</span><span class="s">"Setty"</span> <span class="na">BeforeTargets=</span><span class="s">"PreBuildEvent"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;Exec</span> <span class="na">Command=</span><span class="s">"&amp;quot;$(MSBuildProjectDirectory)\..\setty.exe&amp;quot; /silent"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/Target&gt;</span>
+
+</pre>
+</div>
+
+
+<p>With each build your configuration file will be produced by Setty.exe. 
+You should place Setty.exe file in the folder were your *.sln file exists (or choose any location you like and reflect this in MSBuild Exec task definition). You even can register Setty.exe in your PATH environment variable - but in this case your project will depend on system configuration.</p>
+
+<p>BTW: VS 2010 plugin do almost same steps.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/paralect/setty/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/paralect/setty/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/paralect/setty"></a> is maintained by <a href="https://github.com/paralect">paralect</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
