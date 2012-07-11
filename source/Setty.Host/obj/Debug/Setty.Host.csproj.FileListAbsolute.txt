@@ -1,0 +1,11 @@
+D:\git\paralect\setty\source\Setty.Host\bin\Debug\Setty.Host.exe.config
+D:\git\paralect\setty\source\Setty.Host\bin\Debug\Setty.Host.exe
+D:\git\paralect\setty\source\Setty.Host\bin\Debug\Setty.Host.pdb
+D:\git\paralect\setty\source\Setty.Host\bin\Debug\Setty.dll
+D:\git\paralect\setty\source\Setty.Host\bin\Debug\Setty.Settings.dll
+D:\git\paralect\setty\source\Setty.Host\bin\Debug\RazorEngine.dll
+D:\git\paralect\setty\source\Setty.Host\bin\Debug\Setty.Settings.pdb
+D:\git\paralect\setty\source\Setty.Host\bin\Debug\Setty.pdb
+D:\git\paralect\setty\source\Setty.Host\obj\Debug\ResolveAssemblyReference.cache
+D:\git\paralect\setty\source\Setty.Host\obj\Debug\Setty.Host.exe
+D:\git\paralect\setty\source\Setty.Host\obj\Debug\Setty.Host.pdb

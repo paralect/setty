@@ -1,0 +1,599 @@
+<Configuration>
+  <UnitTestSessions>
+    <Session>
+      <Name>Session #1</Name>
+      <Elements>
+        <UnitTestElement Provider="nUnit" Id="Setty.Test.Tests.ApplicationTest" type="NUnitTestFixtureElement" Project="5B813D81-B093-4B37-A57C-B3E977B21333" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Test.Tests.ConfigFolderTransformerTest" type="NUnitTestFixtureElement" Project="5B813D81-B093-4B37-A57C-B3E977B21333" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Test.Tests.FileSearcherTest" type="NUnitTestFixtureElement" Project="5B813D81-B093-4B37-A57C-B3E977B21333" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Settings.Test.Tests.SettingsBrowserTest" type="NUnitTestFixtureElement" Project="707CAD17-7134-4C17-B18B-D7F66F7F3725" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Settings.Test.Tests.SettingsMapperTest" type="NUnitTestFixtureElement" Project="707CAD17-7134-4C17-B18B-D7F66F7F3725" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Settings.Test.Tests.SettingsReaderTest" type="NUnitTestFixtureElement" Project="707CAD17-7134-4C17-B18B-D7F66F7F3725" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Test.Tests.TransformTest" type="NUnitTestFixtureElement" Project="5B813D81-B093-4B37-A57C-B3E977B21333" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Test.Tests.TransformTest.ApplicatioSettings" ParentId="Setty.Test.Tests.TransformTest" type="NUnitTestElement" TypeName="Setty.Test.Tests.TransformTest" MethodName="ApplicatioSettings" Project="5B813D81-B093-4B37-A57C-B3E977B21333" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Test.Tests.ApplicationTest.ContextSpecified" ParentId="Setty.Test.Tests.ApplicationTest" type="NUnitTestElement" TypeName="Setty.Test.Tests.ApplicationTest" MethodName="ContextSpecified" Project="5B813D81-B093-4B37-A57C-B3E977B21333" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Test.Tests.ApplicationTest.ContextSpecifiedWithoutQuotes" ParentId="Setty.Test.Tests.ApplicationTest" type="NUnitTestElement" TypeName="Setty.Test.Tests.ApplicationTest" MethodName="ContextSpecifiedWithoutQuotes" Project="5B813D81-B093-4B37-A57C-B3E977B21333" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Test.Tests.ApplicationTest.ExpandoPropertiesTest" ParentId="Setty.Test.Tests.ApplicationTest" type="NUnitTestElement" TypeName="Setty.Test.Tests.ApplicationTest" MethodName="ExpandoPropertiesTest" Project="5B813D81-B093-4B37-A57C-B3E977B21333" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Settings.Test.Tests.SettingsReaderTest.OneLevelTest" ParentId="Setty.Settings.Test.Tests.SettingsReaderTest" type="NUnitTestElement" TypeName="Setty.Settings.Test.Tests.SettingsReaderTest" MethodName="OneLevelTest" Project="707CAD17-7134-4C17-B18B-D7F66F7F3725" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Test.Tests.TransformTest.RazorTranformTest" ParentId="Setty.Test.Tests.TransformTest" type="NUnitTestElement" TypeName="Setty.Test.Tests.TransformTest" MethodName="RazorTranformTest" Project="5B813D81-B093-4B37-A57C-B3E977B21333" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Settings.Test.Tests.SettingsReaderTest.RelativePath_Which_Start_From_Slash_Will_Be_Used_As_AbsolutePath" ParentId="Setty.Settings.Test.Tests.SettingsReaderTest" type="NUnitTestElement" TypeName="Setty.Settings.Test.Tests.SettingsReaderTest" MethodName="RelativePath_Which_Start_From_Slash_Will_Be_Used_As_AbsolutePath" Project="707CAD17-7134-4C17-B18B-D7F66F7F3725" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Test.Tests.ApplicationTest.SettingsSpecified" ParentId="Setty.Test.Tests.ApplicationTest" type="NUnitTestElement" TypeName="Setty.Test.Tests.ApplicationTest" MethodName="SettingsSpecified" Project="5B813D81-B093-4B37-A57C-B3E977B21333" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Test.Tests.ApplicationTest.SettingsSpecifiedInAnotherOrder" ParentId="Setty.Test.Tests.ApplicationTest" type="NUnitTestElement" TypeName="Setty.Test.Tests.ApplicationTest" MethodName="SettingsSpecifiedInAnotherOrder" Project="5B813D81-B093-4B37-A57C-B3E977B21333" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Test.Tests.ApplicationTest.Simple" ParentId="Setty.Test.Tests.ApplicationTest" type="NUnitTestElement" TypeName="Setty.Test.Tests.ApplicationTest" MethodName="Simple" Project="5B813D81-B093-4B37-A57C-B3E977B21333" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Settings.Test.Tests.SettingsBrowserTest.SimpleTest" ParentId="Setty.Settings.Test.Tests.SettingsBrowserTest" type="NUnitTestElement" TypeName="Setty.Settings.Test.Tests.SettingsBrowserTest" MethodName="SimpleTest" Project="707CAD17-7134-4C17-B18B-D7F66F7F3725" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Settings.Test.Tests.SettingsMapperTest.SimpleTest" ParentId="Setty.Settings.Test.Tests.SettingsMapperTest" type="NUnitTestElement" TypeName="Setty.Settings.Test.Tests.SettingsMapperTest" MethodName="SimpleTest" Project="707CAD17-7134-4C17-B18B-D7F66F7F3725" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Test.Tests.TransformTest.SimpleTransformTest" ParentId="Setty.Test.Tests.TransformTest" type="NUnitTestElement" TypeName="Setty.Test.Tests.TransformTest" MethodName="SimpleTransformTest" Project="5B813D81-B093-4B37-A57C-B3E977B21333" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Settings.Test.Tests.SettingsReaderTest.Test" ParentId="Setty.Settings.Test.Tests.SettingsReaderTest" type="NUnitTestElement" TypeName="Setty.Settings.Test.Tests.SettingsReaderTest" MethodName="Test" Project="707CAD17-7134-4C17-B18B-D7F66F7F3725" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Test.Tests.ConfigFolderTransformerTest.Test" ParentId="Setty.Test.Tests.ConfigFolderTransformerTest" type="NUnitTestElement" TypeName="Setty.Test.Tests.ConfigFolderTransformerTest" MethodName="Test" Project="5B813D81-B093-4B37-A57C-B3E977B21333" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Settings.Test.Tests.SettingsReaderTest.Test_Relative_Path_When_Settings_At_The_Parrent_Folder" ParentId="Setty.Settings.Test.Tests.SettingsReaderTest" type="NUnitTestElement" TypeName="Setty.Settings.Test.Tests.SettingsReaderTest" MethodName="Test_Relative_Path_When_Settings_At_The_Parrent_Folder" Project="707CAD17-7134-4C17-B18B-D7F66F7F3725" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Settings.Test.Tests.SettingsReaderTest.Test_Relative_Path_When_Settings_Deeply" ParentId="Setty.Settings.Test.Tests.SettingsReaderTest" type="NUnitTestElement" TypeName="Setty.Settings.Test.Tests.SettingsReaderTest" MethodName="Test_Relative_Path_When_Settings_Deeply" Project="707CAD17-7134-4C17-B18B-D7F66F7F3725" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Settings.Test.Tests.SettingsReaderTest.Test_Relative_Path_When_Settings_In_Same_Folder" ParentId="Setty.Settings.Test.Tests.SettingsReaderTest" type="NUnitTestElement" TypeName="Setty.Settings.Test.Tests.SettingsReaderTest" MethodName="Test_Relative_Path_When_Settings_In_Same_Folder" Project="707CAD17-7134-4C17-B18B-D7F66F7F3725" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Test.Tests.FileSearcherTest.TestFileSearcher" ParentId="Setty.Test.Tests.FileSearcherTest" type="NUnitTestElement" TypeName="Setty.Test.Tests.FileSearcherTest" MethodName="TestFileSearcher" Project="5B813D81-B093-4B37-A57C-B3E977B21333" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Settings.Test.Tests.SettingsReaderTest.ThreeLevelTest" ParentId="Setty.Settings.Test.Tests.SettingsReaderTest" type="NUnitTestElement" TypeName="Setty.Settings.Test.Tests.SettingsReaderTest" MethodName="ThreeLevelTest" Project="707CAD17-7134-4C17-B18B-D7F66F7F3725" />
+        <UnitTestElement Provider="nUnit" Id="Setty.Settings.Test.Tests.SettingsReaderTest.TwoLevelTest" ParentId="Setty.Settings.Test.Tests.SettingsReaderTest" type="NUnitTestElement" TypeName="Setty.Settings.Test.Tests.SettingsReaderTest" MethodName="TwoLevelTest" Project="707CAD17-7134-4C17-B18B-D7F66F7F3725" />
+      </Elements>
+    </Session>
+  </UnitTestSessions>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Properties/f:AssemblyInfo.cs" caret="492" fromTop="11" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:Guids.tt" caret="229" fromTop="1" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:WinFormControl.tt" caret="229" fromTop="1" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:WinFormControlCS.tt" caret="229" fromTop="1" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:WpfControlXaml.tt" caret="229" fromTop="1" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:WpfControl.tt" caret="229" fromTop="1" />
+      <File id="5B813D81-B093-4B37-A57C-B3E977B21333/d:Tests/f:TransformTest.cs" caret="0" fromTop="0" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:PkgCmdID.tt" caret="546" fromTop="0" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:ToolWindow.tt" caret="0" fromTop="0" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:ToolWindowBase.tt" caret="0" fromTop="0" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/f:Setty.VsAddin.vspackage" caret="0" fromTop="0" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:PkgCmdID.cs" caret="0" fromTop="0" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:Guids.cs" caret="102" fromTop="5" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:ToolWindowBase.cs" caret="0" fromTop="0" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:VSPackage.tt" caret="0" fromTop="0" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:PackageSettings.cs" caret="138" fromTop="6" />
+      <File id="8548D23B-0168-4020-9A86-A7499DC1ED80/f:PathHelper.cs" caret="1866" fromTop="41" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:SettyEngineEnum.cs" caret="0" fromTop="0" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/f:SettyConfigurationToolWindow.cs" caret="936" fromTop="23" />
+      <File id="453CABF8-F0EE-4FDF-8DCC-C5AA80892E63/d:Utils/f:FileSearcher.cs" caret="576" fromTop="16" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/f:SettyPackage.cs" caret="0" fromTop="0" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:VSPackage.vsct" caret="3013" fromTop="29" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:Package.tt" caret="0" fromTop="0" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/f:SettyConfigurationControl.xaml" caret="211" fromTop="2" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/f:SettyConfigurationControl.xaml.cs" caret="5477" fromTop="40" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:Package.cs" caret="4268" fromTop="0" />
+      <File id="8548D23B-0168-4020-9A86-A7499DC1ED80/f:SettingsBrowser.cs" caret="392" fromTop="14" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:SettyXmlBuilder.cs" caret="7076" fromTop="34" />
+      <File id="453CABF8-F0EE-4FDF-8DCC-C5AA80892E63/f:SettyConstants.cs" caret="1114" fromTop="25" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:PackageManager.cs" caret="3831" fromTop="23" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/f:SettyConfigurationControl.xaml.cs" caret="0" fromTop="0" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/f:SettyConfigurationControl.xaml.cs" caret="4018" fromTop="32" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/f:SettyConfigurationControl.xaml.cs" caret="4396" fromTop="37" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/f:SettyConfigurationControl.xaml.cs" caret="5477" fromTop="40" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:Package.cs" caret="4472" fromTop="42" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:Package.cs" caret="4213" fromTop="33" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:Package.cs" caret="4215" fromTop="38" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:SettyXmlBuilder.cs" caret="2343" fromTop="26" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:SettyXmlBuilder.cs" caret="2496" fromTop="28" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:SettyXmlBuilder.cs" caret="2700" fromTop="33" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:PackageManager.cs" caret="7914" fromTop="27" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:PackageManager.cs" caret="7064" fromTop="9" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:PackageManager.cs" caret="8565" fromTop="40" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:PackageManager.cs" caret="7677" fromTop="25" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:SettyXmlBuilder.cs" caret="3893" fromTop="37" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:PackageManager.cs" caret="674" fromTop="14" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:PackageManager.cs" caret="5744" fromTop="42" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:PackageManager.cs" caret="4611" fromTop="46" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:PackageManager.cs" caret="5550" fromTop="37" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:PackageManager.cs" caret="4491" fromTop="16" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:GeneratedCode/f:Package.cs" caret="4268" fromTop="0" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:PackageManager.cs" caret="5179" fromTop="24" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:PackageManager.cs" caret="5157" fromTop="25" />
+      <File id="8548D23B-0168-4020-9A86-A7499DC1ED80/f:SettingsBrowser.cs" caret="3962" fromTop="17" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:SettyXmlBuilder.cs" caret="7636" fromTop="49" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:SettyXmlBuilder.cs" caret="7595" fromTop="35" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:SettyXmlBuilder.cs" caret="7595" fromTop="39" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:SettyXmlBuilder.cs" caret="7634" fromTop="49" />
+      <File id="453CABF8-F0EE-4FDF-8DCC-C5AA80892E63/f:SettyConstants.cs" caret="1114" fromTop="25" />
+      <File id="2FD40F6B-A364-42B9-BEB6-DF36B5BE98F2/d:Code/f:PackageManager.cs" caret="3831" fromTop="23" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="public" priority="1804" />
+      <Item value="interface" priority="30" />
+      <Item value="void" priority="383" />
+      <Item value="ITransformer`0" priority="127" />
+      <Item value="RazorTransformer`0" priority="31" />
+      <Item value="_configPath" priority="31" />
+      <Item value="xsltTemplateReader" priority="95" />
+      <Item value="var" priority="2463" />
+      <Item value="new" priority="1248" />
+      <Item value="model" priority="95" />
+      <Item value="DynamicDictionary`0" priority="31" />
+      <Item value="private" priority="415" />
+      <Item value="_dictionary" priority="31" />
+      <Item value="properties" priority="31" />
+      <Item value="settings" priority="368" />
+      <Item value="string" priority="1599" />
+      <Item value="object" priority="96" />
+      <Item value="foreach" priority="383" />
+      <Item value="setting" priority="31" />
+      <Item value="key" priority="63" />
+      <Item value="return" priority="698" />
+      <Item value="res" priority="31" />
+      <Item value="DynamicDictionary" priority="28" />
+      <Item value="MapSettings`0" priority="31" />
+      <Item value="_settings" priority="31" />
+      <Item value="outputWriter" priority="31" />
+      <Item value="result" priority="95" />
+      <Item value="static" priority="350" />
+      <Item value="inputFilePath" priority="26" />
+      <Item value="List" priority="191" />
+      <Item value="_transformers" priority="64" />
+      <Item value="List&lt;ITransformer&gt;" priority="28" />
+      <Item value="XsltTransformer" priority="28" />
+      <Item value="RazorTransformer" priority="29" />
+      <Item value="File`0" priority="191" />
+      <Item value="fileName" priority="63" />
+      <Item value="Stream`0" priority="63" />
+      <Item value="String`0" priority="223" />
+      <Item value="if" priority="923" />
+      <Item value="throw" priority="63" />
+      <Item value="AllTransformers" priority="31" />
+      <Item value="x" priority="159" />
+      <Item value="extention" priority="31" />
+      <Item value="TransformerSelector" priority="28" />
+      <Item value="config" priority="191" />
+      <Item value="Razor`0" priority="63" />
+      <Item value="configPath" priority="31" />
+      <Item value="writerSettings" priority="31" />
+      <Item value="DynamicObject`0" priority="28" />
+      <Item value="dynamic" priority="321" />
+      <Item value="IXsltContextVariable`0" priority="31" />
+      <Item value="TrySetMember`0" priority="31" />
+      <Item value="MemberwiseClone`0" priority="31" />
+      <Item value="false" priority="95" />
+      <Item value="configObject" priority="31" />
+      <Item value="as" priority="191" />
+      <Item value="Assert`0" priority="31" />
+      <Item value="expandoDictionary" priority="63" />
+      <Item value="Model" priority="91" />
+      <Item value="Company" priority="27" />
+      <Item value="Dictionary" priority="58" />
+      <Item value="List&lt;string&gt;" priority="57" />
+      <Item value="base" priority="31" />
+      <Item value="dte" priority="318" />
+      <Item value="Array`0" priority="32" />
+      <Item value="project" priority="255" />
+      <Item value="pathToTHeProject" priority="58" />
+      <Item value="node" priority="95" />
+      <Item value="XmlNode`0" priority="60" />
+      <Item value="XmlDocument" priority="87" />
+      <Item value="child" priority="255" />
+      <Item value="xmlDoc" priority="981" />
+      <Item value="null" priority="159" />
+      <Item value="_settyXml" priority="31" />
+      <Item value="xfrag" priority="95" />
+      <Item value="XmlNodeType`0" priority="31" />
+      <Item value="XmlElement`0" priority="124" />
+      <Item value="xmlnsManager" priority="31" />
+      <Item value="XElement" priority="29" />
+      <Item value="true" priority="159" />
+      <Item value="XmlDocument`0" priority="63" />
+      <Item value="newElem" priority="63" />
+      <Item value="execElem" priority="63" />
+      <Item value="targetElem" priority="127" />
+      <Item value="XmlAttribute`0" priority="28" />
+      <Item value="nameAttr" priority="63" />
+      <Item value="projectName" priority="223" />
+      <Item value="settyNodes" priority="31" />
+      <Item value="nameAttribute" priority="31" />
+      <Item value="Window`0" priority="31" />
+      <Item value="OK" priority="33" />
+      <Item value="dialog" priority="159" />
+      <Item value="this" priority="159" />
+      <Item value="class" priority="92" />
+      <Item value="Key" priority="26" />
+      <Item value="enum" priority="30" />
+      <Item value="Engine`0" priority="32" />
+      <Item value="cbEngine" priority="223" />
+      <Item value="PackageManager`0" priority="672" />
+      <Item value="PackageProjectSettings`0" priority="127" />
+      <Item value="PackageSettings`0" priority="159" />
+      <Item value="s" priority="95" />
+      <Item value="Path`0" priority="306" />
+      <Item value="_pathToUserData" priority="31" />
+      <Item value="_dataFileName" priority="31" />
+      <Item value="Solutions" priority="31" />
+      <Item value="List&lt;PackageSolutionSettings&gt;" priority="57" />
+      <Item value="PackageSolutionSettings`0" priority="31" />
+      <Item value="Projects" priority="59" />
+      <Item value="List&lt;PackageProjectSettings&gt;" priority="57" />
+      <Item value="PathToDataFile" priority="31" />
+      <Item value="dataPath" priority="127" />
+      <Item value="PackageSolutionSettings" priority="28" />
+      <Item value="SolutionPath" priority="26" />
+      <Item value="NewsStyleUriParser`0" priority="26" />
+      <Item value="PackageProjectSettings" priority="28" />
+      <Item value="projects" priority="191" />
+      <Item value="pathToUserData" priority="127" />
+      <Item value="PackageSettings" priority="57" />
+      <Item value="solution" priority="383" />
+      <Item value="bool" priority="95" />
+      <Item value="solutionPath" priority="127" />
+      <Item value="projectPath" priority="63" />
+      <Item value="solutionExists" priority="63" />
+      <Item value="else" priority="63" />
+      <Item value="projectExists" priority="31" />
+      <Item value="Enum`0" priority="31" />
+      <Item value="SettyEngineEnum`0" priority="96" />
+      <Item value="SelectListItem`0" priority="65" />
+      <Item value="textBoxSettingsPath" priority="191" />
+      <Item value="MessageBox`0" priority="31" />
+      <Item value="XmlDataProvider`0" priority="31" />
+      <Item value="Settings" priority="90" />
+      <Item value="ActiveSolutionPath" priority="63" />
+      <Item value="UserDataPath" priority="31" />
+      <Item value="GetActiveSolution`0" priority="31" />
+      <Item value="System" priority="127" />
+      <Item value="IO" priority="107" />
+      <Item value="settyConfigs" priority="31" />
+      <Item value="pathToSettings" priority="63" />
+      <Item value="SettyConstants`0" priority="26" />
+      <Item value="solutionSettings" priority="191" />
+      <Item value="DownloadSetty`0" priority="31" />
+      <Item value="MakeRelativePath`0" priority="31" />
+      <Item value="pathToSetty" priority="31" />
+      <Item value="pathToSettySettings" priority="31" />
+      <Item value="ActiveProjectPath" priority="63" />
+      <Item value="pathToTheSetty" priority="31" />
+      <Item value="switch" priority="31" />
+      <Item value="case" priority="63" />
+      <Item value="Razor" priority="16" />
+      <Item value="break" priority="95" />
+      <Item value="originalConfig" priority="95" />
+      <Item value="settyConfig" priority="127" />
+      <Item value="configs" priority="63" />
+      <Item value="localPath" priority="63" />
+      <Item value="webClient" priority="31" />
+      <Item value="Xslt" priority="16" />
+      <Item value="xsltDoc" priority="127" />
+      <Item value="AddinSettings`0" priority="31" />
+      <Item value="pathToSolution" priority="31" />
+      <Item value="cbActiveProject" priority="63" />
+      <Item value="Value" priority="31" />
+      <Item value="int" priority="31" />
+      <Item value="override" priority="90" />
+      <Item value="Instance" priority="85" />
+      <Item value="originalConfigFileName" priority="159" />
+      <Item value="itemElem" priority="31" />
+      <Item value="content" priority="31" />
+      <Item value="xml" priority="159" />
+      <Item value="settyFileName" priority="95" />
+      <Item value="importNode" priority="31" />
+      <Item value="projDoc" priority="191" />
+      <Item value="xmlDocFrag" priority="26" />
+      <Item value="fragment" priority="31" />
+      <Item value="itemGroup" priority="95" />
+      <Item value="contentItem" priority="63" />
+      <Item value="dependent" priority="63" />
+      <Item value="uri" priority="31" />
+      <Item value="Exception" priority="28" />
+      <Item value="GetCurrentDte`0" priority="26" />
+      <Item value="SettyXmlBuilder`0" priority="31" />
+      <Item value="_settyXmlBuilder" priority="128" />
+      <Item value="#endif" priority="31" />
+      <Item value="#endregion" priority="27" />
+      <Item value="const" priority="31" />
+      <Item value="VsProjectXmlNamespace" priority="31" />
+      <Item value="deep" priority="31" />
+      <Item value="settingsPath" priority="31" />
+      <Item value="PathHelper`0" priority="31" />
+      <Item value="pathToFile" priority="63" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlTextReader">
+      <Item value="ReadContentAsString`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
+      <Item value="Add`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Configuration.KeyValueConfigurationCollection">
+      <Item value="AllKeys" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Configuration.KeyValueConfigurationElement">
+      <Item value="Value" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlWriter">
+      <Item value="WriteString`0" priority="26" />
+      <Item value="WriteRaw`0" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
+      <Item value="Add`0" priority="107" />
+      <Item value="FirstOrDefault`1" priority="22" />
+      <Item value="Single`1" priority="27" />
+      <Item value="Count" priority="53" />
+      <Item value="First`1" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Path">
+      <Item value="GetExtension`0" priority="26" />
+      <Item value="Combine`0" priority="107" />
+      <Item value="GetDirectoryName`0" priority="54" />
+      <Item value="GetFileName`0" priority="81" />
+      <Item value="GetFileNameWithoutExtension`0" priority="23" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Replace`0" priority="26" />
+      <Item value="ToCharArray`0" priority="26" />
+      <Item value="ToString`0" priority="81" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Empty" priority="53" />
+      <Item value="IsNullOrEmpty`0" priority="134" />
+      <Item value="Format`0" priority="80" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Setty.ITransformer">
+      <Item value="ConfigExtention" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Setty.TransformerSelector">
+      <Item value="Select`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@NUnit.Framework.Assert">
+      <Item value="AreEqual`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="RazorTransitionCompletionContext">
+      <Item value="dynamic" priority="7" />
+      <Item value="if" priority="15" />
+      <Item value="Model" priority="15" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
+      <Item value="ToList`1" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IDictionary`2">
+      <Item value="Add`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Setty.SettyConstants">
+      <Item value="SearchConfigsNames" priority="26" />
+      <Item value="SupportedConfigNames" priority="22" />
+      <Item value="SettyConfigs" priority="54" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Microsoft.VisualStudio.Shell.Package">
+      <Item value="ApplicationRegistryRoot" priority="26" />
+      <Item value="RegisterProjectFactory`0" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:EnvDTE.DTE">
+      <Item value="ActiveSolutionProjects" priority="53" />
+      <Item value="Application" priority="103" />
+      <Item value="DTE" priority="26" />
+      <Item value="Solution" priority="134" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlNode">
+      <Item value="AppendChild`0" priority="49" />
+      <Item value="Name" priority="26" />
+      <Item value="Attributes" priority="53" />
+      <Item value="ChildNodes" priority="26" />
+      <Item value="ParentNode" priority="26" />
+      <Item value="RemoveChild`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlDocument">
+      <Item value="LoadXml`0" priority="163" />
+      <Item value="Load`0" priority="76" />
+      <Item value="DocumentElement" priority="448" />
+      <Item value="SelectSingleNode`0" priority="27" />
+      <Item value="Attributes" priority="53" />
+      <Item value="CreateElement`0" priority="134" />
+      <Item value="NamespaceURI" priority="53" />
+      <Item value="CreateNode`0" priority="26" />
+      <Item value="CreateAttribute`0" priority="54" />
+      <Item value="OwnerDocument" priority="53" />
+      <Item value="ImportNode`0" priority="22" />
+      <Item value="Save`0" priority="134" />
+      <Item value="SelectNodes`0" priority="26" />
+      <Item value="InnerText" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlElement">
+      <Item value="PrependChild`0" priority="54" />
+      <Item value="AppendChild`0" priority="272" />
+      <Item value="Attributes" priority="26" />
+      <Item value="FirstChild" priority="53" />
+      <Item value="HasChildNodes" priority="27" />
+      <Item value="SelectSingleNode`0" priority="54" />
+      <Item value="ChildNodes" priority="26" />
+      <Item value="SelectNodes`0" priority="26" />
+      <Item value="RemoveChild`0" priority="26" />
+      <Item value="Value" priority="26" />
+      <Item value="InnerText" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Xml.XmlNodeType">
+      <Item value="DocumentFragment" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlNamespaceManager">
+      <Item value="RemoveNamespace`0" priority="27" />
+      <Item value="DefaultNamespace" priority="22" />
+      <Item value="AddNamespace`0" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlAttribute">
+      <Item value="Value" priority="104" />
+      <Item value="InnerText" priority="22" />
+      <Item value="InnerXml" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlAttributeCollection">
+      <Item value="Append`0" priority="26" />
+      <Item value="Indexer" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:VSPackage.PackageManager">
+      <Item value="GetSettyXml`0" priority="26" />
+      <Item value="MergeSettings`0" priority="26" />
+      <Item value="Settings" priority="130" />
+      <Item value="ActiveProjectPath" priority="80" />
+      <Item value="ActiveSolutionPath" priority="53" />
+      <Item value="GenerateConfigs`0" priority="26" />
+      <Item value="UserDataPath" priority="54" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlNodeList">
+      <Item value="Count" priority="26" />
+      <Item value="Item`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.FolderBrowserDialog">
+      <Item value="SelectedPath" priority="80" />
+      <Item value="Description" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="XamlCodeCompletionContext">
+      <Item value="Horizontal" priority="5" />
+      <Item value="Height" priority="5" />
+      <Item value="MinHeight" priority="11" />
+      <Item value="Margin" priority="5" />
+      <Item value="Name" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Controls.TextBlock">
+      <Item value="Text" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:VSPackage.VSPackagePackageBase">
+      <Item value="UserDataPath" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Controls.ComboBox">
+      <Item value="Items" priority="135" />
+      <Item value="DisplayMemberPath" priority="26" />
+      <Item value="SelectedValuePath" priority="27" />
+      <Item value="SelectedItem" priority="107" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Controls.ItemCollection">
+      <Item value="Add`0" priority="80" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@VSPackage.Engine">
+      <Item value="Razor" priority="27" />
+      <Item value="Xslt" priority="28" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.Serialization.XmlSerializer">
+      <Item value="Serialize`0" priority="26" />
+      <Item value="Deserialize`0" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@VSPackage.PackageSettings">
+      <Item value="Current" priority="76" />
+      <Item value="Deserialize`0" priority="27" />
+      <Item value="Serialize`0" priority="81" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="Exists`0" priority="107" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.FileMode">
+      <Item value="Create" priority="27" />
+      <Item value="CreateNew" priority="22" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.FileStream">
+      <Item value="Flush`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:VSPackage.PackageSettings">
+      <Item value="Serialize`0" priority="80" />
+      <Item value="Solutions" priority="107" />
+      <Item value="SpecifyPathToUserData`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:EnvDTE.Solution">
+      <Item value="FullName" priority="80" />
+      <Item value="Projects" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Array">
+      <Item value="Clone`0" priority="26" />
+      <Item value="GetValue`0" priority="80" />
+      <Item value="GetLength`0" priority="26" />
+      <Item value="Length" priority="49" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:VSPackage.PackageSolutionSettings">
+      <Item value="SolutionPath" priority="161" />
+      <Item value="Projects" priority="76" />
+      <Item value="Engine" priority="80" />
+      <Item value="SettingsPath" priority="107" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:VSPackage.PackageProjectSettings">
+      <Item value="ProjectPath" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@VSPackage.PackageManager">
+      <Item value="Instance" priority="350" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Directory">
+      <Item value="Exists`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Controls.TextBox">
+      <Item value="Text" priority="134" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.MessageBox">
+      <Item value="Show`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:VSPackage.SelectListItem">
+      <Item value="Value" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@VSPackage.AddinSettings">
+      <Item value="SettyDownloadPath" priority="26" />
+      <Item value="AddinSettingsFile" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Setty.VsAddin.Code.PackageManager">
+      <Item value="Instance" priority="243" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Setty.VsAddin.Code.PackageManager">
+      <Item value="MergeSettings`0" priority="53" />
+      <Item value="ActiveProjectPath" priority="108" />
+      <Item value="SolutionProjects" priority="26" />
+      <Item value="ActiveSolutionPath" priority="80" />
+      <Item value="Settings" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Setty.VsAddin.GeneratedCode.VSPackagePackageBase">
+      <Item value="UserDataPath" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Int32">
+      <Item value="ToString`0" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Int32">
+      <Item value="Parse`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Setty.VsAddin.SelectListItem">
+      <Item value="Value" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlDocumentFragment">
+      <Item value="InnerXml" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:SettyVsAddin.SettyVsAddinPackageBase">
+      <Item value="UserDataPath" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Setty.VsAddin.SettyConfigurationControl">
+      <Item value="UpdateSettings`0" priority="20" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.IO.DirectoryInfo">
+      <Item value="Parent" priority="26" />
+      <Item value="FullName" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@Setty.VsAddin.Code.SettyEngineEnum">
+      <Item value="Razor" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Setty.VsAddin.Code.PackageSettings">
+      <Item value="Solutions" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Setty.VsAddin.Code.PackageSolutionSettings">
+      <Item value="SolutionPath" priority="26" />
+      <Item value="SettingsPath" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Setty.VsAddin.Code.SettyXmlBuilder">
+      <Item value="CreateEmptySettingsFile`0" priority="26" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>

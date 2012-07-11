@@ -1,0 +1,9 @@
+D:\git\paralect\Setty\source\Setty.Settings.Test\bin\Publish\Setty.Settings.Test.dll.config
+D:\git\paralect\Setty\source\Setty.Settings.Test\bin\Publish\Setty.Settings.Test.dll
+D:\git\paralect\Setty\source\Setty.Settings.Test\bin\Publish\Setty.Settings.Test.pdb
+D:\git\paralect\Setty\source\Setty.Settings.Test\bin\Publish\nunit.framework.dll
+D:\git\paralect\Setty\source\Setty.Settings.Test\bin\Publish\Setty.Settings.dll
+D:\git\paralect\Setty\source\Setty.Settings.Test\bin\Publish\Setty.Settings.pdb
+D:\git\paralect\Setty\source\Setty.Settings.Test\obj\Publish\ResolveAssemblyReference.cache
+D:\git\paralect\Setty\source\Setty.Settings.Test\obj\Publish\Setty.Settings.Test.dll
+D:\git\paralect\Setty\source\Setty.Settings.Test\obj\Publish\Setty.Settings.Test.pdb

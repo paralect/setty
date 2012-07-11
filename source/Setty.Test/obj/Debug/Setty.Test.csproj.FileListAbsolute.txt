@@ -1,0 +1,14 @@
+D:\git\paralect\setty\source\Setty.Test\obj\Debug\ResolveAssemblyReference.cache
+D:\git\paralect\setty\source\Setty.Test\bin\Debug\Setty.Test.dll.config
+D:\git\paralect\setty\source\Setty.Test\bin\Debug\Setty.Test.dll
+D:\git\paralect\setty\source\Setty.Test\bin\Debug\Setty.Test.pdb
+D:\git\paralect\setty\source\Setty.Test\bin\Debug\nunit.framework.dll
+D:\git\paralect\setty\source\Setty.Test\bin\Debug\Setty.dll
+D:\git\paralect\setty\source\Setty.Test\bin\Debug\Setty.Host.exe
+D:\git\paralect\setty\source\Setty.Test\bin\Debug\Setty.Settings.dll
+D:\git\paralect\setty\source\Setty.Test\bin\Debug\RazorEngine.dll
+D:\git\paralect\setty\source\Setty.Test\bin\Debug\Setty.Host.pdb
+D:\git\paralect\setty\source\Setty.Test\bin\Debug\Setty.Settings.pdb
+D:\git\paralect\setty\source\Setty.Test\bin\Debug\Setty.pdb
+D:\git\paralect\setty\source\Setty.Test\obj\Debug\Setty.Test.dll
+D:\git\paralect\setty\source\Setty.Test\obj\Debug\Setty.Test.pdb

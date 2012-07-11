@@ -1,0 +1,5 @@
+D:\git\paralect\Setty\source\Setty.Settings\bin\Publish\Setty.Settings.dll
+D:\git\paralect\Setty\source\Setty.Settings\bin\Publish\Setty.Settings.pdb
+D:\git\paralect\Setty\source\Setty.Settings\obj\Publish\ResolveAssemblyReference.cache
+D:\git\paralect\Setty\source\Setty.Settings\obj\Publish\Setty.Settings.dll
+D:\git\paralect\Setty\source\Setty.Settings\obj\Publish\Setty.Settings.pdb
