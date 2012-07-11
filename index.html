@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Setty by paralect</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Setty</h1>
+        <h2>Setty component solves two common problems - management of key-value settings and management of .NET config files (App.config and Web.config)</h2>
+        <a href="https://github.com/paralect/setty" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h2>Overview</h2>
+
+<p>Setty was designed to help manage project key/value settings. .NET config files differ for different deployment configurations. There should be a way to manage config files for different deployment configurations. Setty chose centralized approach by generating *.config files based on some template language. Currently there is support for razor and xslt transform engines. </p>
+
+<h2>Quick start </h2>
+
+<p>The best way to getting started with Setty is download plugin for visual studio 2010. And install setty in one click.
+Plugin will configure everything for you.</p>
+
+<ol>
+<li>Open Visual Studio and navigate to Tools -&gt; Extentions Manager. </li>
+<li>Search in Online Gallery for work 'Setty' and double click to install (reload Visual Studio after this). Or alternatively download extension <a href="https://github.com/downloads/paralect/setty/Setty.VsAddin.vsix">Setty VS 2010 addin</a> 
+<img src="images/add_vs_extention.png" alt="add vs extension">
+</li>
+<li>Create new project (or open existing one), right click on it. In context menu navigate to Add -&gt; Add Setty... 
+<img src="images/images/add_setty.png" alt="add vs extension">
+</li>
+<li>Plugin ask you where to create global settings folder. Usually this folder is on top of solution folder. 
+<img src="images/browse_settings_folder.png" alt="add vs extension">
+</li>
+<li>Congratulations! You are done. Now you can start use Setty.</li>
+</ol><p>By default setty use <a href="http://www.microsoft.com/web/category/razor">Razor syntax</a> to transform setty config (Web.config.cshtml on above screen). 
+  Settings Folder is a simple concept of hierarchical configuration system well understood by many ASP.NET developers. The more deeper your configuration file is located the more precedence your configuration file has comparing to outer configuration files. This is a simple way to overwrite outer configuration. Here is example from real world:</p>
+
+<p><img src="https://sites.google.com/a/paralect.com/team/paralect-library/paralect-config/Settings.png" alt="example"></p>
+
+<p>To try it out navigate to the settings folder which you've specified on 4th step. There you'll find App.config file. This file is a simple storage of key/value settings. Settings Folder has only one configuration file named App.config. Content of this file is a plain .NET appSettings section. </p>
+
+<p>Open it and add new setting:</p>
+
+<div class="highlight">
+<pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="nt">&lt;configuration&gt;</span>
+  <span class="nt">&lt;appSettings&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">"hello"</span> <span class="na">value=</span><span class="s">"Hello World"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/appSettings&gt;</span>
+<span class="nt">&lt;/configuration&gt;</span>
+</pre>
+</div>
+
+
+<p>After this open your setty config file (In my case it's Web.config.cshtml) and use setting as follow:</p>
+
+<div class="highlight">
+<pre><span class="nt">&lt;configuration&gt;</span>
+  <span class="nt">&lt;appSettings&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">"MyFirstSetting"</span> <span class="na">value=</span><span class="s">"@Model["</span><span class="err">hello"]"</span> <span class="nt">/&gt;</span>
+    ...
+</pre>
+</div>
+
+
+<p>Rebuild project and open Web.config file, there should be following result:</p>
+
+<div class="highlight">
+<pre><span class="nt">&lt;configuration&gt;</span>
+  <span class="nt">&lt;appSettings&gt;</span>
+    <span class="nt">&lt;add</span> <span class="na">key=</span><span class="s">"MyFirstSetting"</span> <span class="na">value=</span><span class="s">"Hello World"</span> <span class="nt">/&gt;</span>
+    ...
+</pre>
+</div>
+
+
+<h2>.setty file</h2>
+
+<p>Setty use .setty file to locate settings folder for the current environment.</p>
+
+<p>1.Usually you will need only one .setty for the all solution projects.</p>
+
+<p>Without any special arguments setty.exe will start search for .setty file at the current directory (where *.config.cshtml located). If .setty will not find it will look into the parent folder, therefore if you want to have one .setty for the all projects and you have project structure like below, you can just put .setty under source folder and it will be used to transform all solution configs:</p>
+
+<div class="highlight">
+<pre>D:\\MyProject\
+     settings
+      App.config
+         Stage
+             App.config
+         Production
+             App.config
+
+     source                
+         Project1Folder
+             web.config.xslt
+         Project2Folder
+             app.config.xslt
+      .setty.config
+</pre>
+</div>
+
+
+<p>2.Separate .setty file for particular project</p>
+
+<p>To use separate settings for particular project you can just put .setty near *.config.cshtml and it will be used to locate settings.</p>
+
+<p>3.Content of the .setty file</p>
+
+<p>Path file can contains FULL or RELATIVE path to the settings folder.
+Examples of path file content(based on above project structure):</p>
+
+<ul>
+<li>
+<code>D:\\MyProject\settings\Stage</code> </li>
+<li>
+<p><code>../settings</code> (relative path should not starts from slash, because it will be treat as absolute path)</p>
+
+<p>4.Source control and .setty file:
+The file path should not be under your source control system, because in most situations developers has different paths and you will continuously merge this file.</p>
+</li>
+</ul><hr>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/paralect/setty/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/paralect/setty/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/paralect/setty"></a> is maintained by <a href="https://github.com/paralect">paralect</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
