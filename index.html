@@ -30,37 +30,39 @@
         <section id="main-content">
           <h2>Overview</h2>
 
-<p>Setty was designed to help manage project key/value settings. .NET config files differ for different deployment configurations. There should be a way to manage config files for different deployment configurations. Setty chose centralized approach by generating *.config files based on some template language. Currently there is support for razor and xslt transform engines. </p>
+<p>Setty was designed to help manage project key/value settings. .NET config files differ for different deployment configurations. There should be a way to manage config files for different deployment configurations. Setty chose centralized approach by generating *.config files based on some template language. Currently there is support for razor and xslt transformation engines. </p>
+
+<p>Config files produced by templates which don't transform anything but actually used as trivial xml generating language. Reading of this templates is as easy as reading of plain config file. Setty can transforms two files - App.config.cshtml(xslt) and Web.config.cshtml(xslt). Result of transformation will be places to App.config and Web.config (<strong>overwriting all existent content!</strong>) Setty was designed to be used without requirement to reference any Setty assembles by your project. Thats mean that Setty can be used as built-time and management-time component. Setty was designed to be used both by web applications and desktop applications. Setty was designed to work well with any existing config management solutions, like Visual Studio Config Transformation, Web Deployment Project etc.. It's normal to use both Setty and Visual Studio Config Transformation. However, with Setty it is possible to change .NET config files without the needs to build or deploy project (thus it is not only build- or deploy-time component, it is also management-time component)</p>
 
 <p>Setty with razor syntax require .net 4.0+. .net 2.0 version currently support only xslt transformation engine and has to be installed manually. See documentation below for details</p>
 
 <h2>Installation guide</h2>
 
-<p>The best way to getting started with Setty is download plugin for visual studio 2010. And install setty in one click.
+<p>The best way to getting started with Setty is download plugin for visual studio 2010. And install Setty in one click.
 Plugin will configure everything for you.</p>
 
 <ol>
-<li>Open Visual Studio and navigate to Tools -&gt; Extentions Manager. </li>
-<li>Search in Online Gallery for work 'Setty' and double click to install (reload Visual Studio after this). Or alternatively download extension <a href="https://github.com/downloads/paralect/setty/Setty.VsAddin.vsix">Setty VS 2010 addin</a> 
-<img src="http://paralect.github.com/setty/images/add_vs_extention.png" alt="add vs extension">
+<li>Open Visual Studio and navigate to Tools -&gt; Extensions Manager. </li>
+<li>Search in Visual Studio Online Gallery for word 'Setty' and double click to install (reload Visual Studio after installation). Or alternatively download extension <a href="https://github.com/downloads/paralect/setty/Setty.VsAddin.vsix">Setty VS 2010 addin</a> 
+<img src="images/add_vs_extention.png" alt="add vs extension">
 </li>
 <li>Create new project (or open existing one), right click on it. In context menu navigate to Add -&gt; Add Setty... 
-<img src="http://paralect.github.com/setty/images/images/add_setty.png" alt="add vs extension">
+<img src="images/add_setty.png" alt="add vs extension">
 </li>
-<li>Plugin ask you where to create global settings folder. Usually this folder is on top of solution folder. 
-<img src="http://paralect.github.com/setty/images/browse_settings_folder.png" alt="add vs extension">
+<li>Plugin will ask you where to create a global settings folder. Usually this folder place is on top of solution folder. 
+<img src="images/browse_settings_folder.png" alt="add vs extension">
 </li>
 <li>Congratulations! You are done. Now you can start use Setty.</li>
 </ol><h2>Quick start</h2>
 
-<p>By default setty use <a href="http://www.microsoft.com/web/category/razor">Razor syntax</a> to transform setty config (Web.config.cshtml on above screen). 
-  Settings Folder is a simple concept of hierarchical configuration system well understood by many ASP.NET developers. The more deeper your configuration file is located the more precedence your configuration file has comparing to outer configuration files. This is a simple way to overwrite outer configuration. Here is example from real world:</p>
+<p>By default Setty use <a href="http://www.microsoft.com/web/category/razor">Razor syntax</a> to transform Setty configs (Web.config.cshtml on above screen). 
+  Settings Folder is a simple concept of hierarchical configuration system well understood by many ASP.NET developers. The more deeper your configuration file is located the more precedence your configuration file has comparing to outer configuration files. This is a simple way to overwrite outer configuration. Here is example settings folder from real project:</p>
 
-<p><img src="http://paralect.github.com/setty/images/settings_folder.png" alt="example"></p>
+<p><img src="settings_folder.png" alt="example"></p>
 
 <p>To try it out navigate to the settings folder which you've specified on 4th step. There you'll find App.config file. This file is a simple storage of key/value settings. Settings Folder has only one configuration file named App.config. Content of this file is a plain .NET appSettings section. </p>
 
-<p>Open it and add new setting:</p>
+<p>Open it and add new key/value setting:</p>
 
 <div class="highlight">
 <pre><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
@@ -73,7 +75,7 @@ Plugin will configure everything for you.</p>
 </div>
 
 
-<p>After this open your setty config file (In my case it's Web.config.cshtml) and use setting as follow:</p>
+<p>After this open Setty config file  (In my case it's Web.config.cshtml) and use setting as follow:</p>
 
 <div class="highlight">
 <pre><span class="nt">&lt;configuration&gt;</span>
@@ -94,6 +96,10 @@ Plugin will configure everything for you.</p>
 </pre>
 </div>
 
+
+<p>With razor template template engine Model is actually <code>Dictionary&lt;string, string&gt;</code>, because of this to read some value you have to write something like this: <code>@Model["hello"]</code>. We chose this approach instead of dynamic model - <code>@Model.hello</code>, because settings usually contains some specific characters that not allowed in property names in .net. </p>
+
+<p>When you start project you usually will need just read all setting into appSettings section within config file. For this purpose Setty has special property: <code>ApplicationSettings</code>. So to read all settings you just need following code:  <code>@Model["ApplicationSettings"]</code>.</p>
 
 <h2>Real world Setty config files</h2>
 
@@ -188,7 +194,7 @@ of variables, conditions, whatever transformation language support.</p>
 
 <p>1.Usually you will need only one .setty for the all solution projects.</p>
 
-<p>Without any special arguments setty.exe will start search for .setty file at the current directory (where *.config.cshtml located). If .setty will not find it will look into the parent folder, therefore if you want to have one .setty for the all projects and you have project structure like below, you can just put .setty under source folder and it will be used to transform all solution configs:</p>
+<p>Without any special arguments setty.exe will start search for .setty file at the current directory. If .setty not presented in the current directory it will look into the parent, and so on up to the disc root. Usually you will have only one .setty file for the all projects. Below you can see real project structure with one .setty file that used to transform config files of 2 projects:</p>
 
 <div class="highlight">
 <pre>D:\\MyProject\
@@ -204,7 +210,7 @@ of variables, conditions, whatever transformation language support.</p>
              web.config.cshtml
          Project2Folder
              app.config.cshtml
-      .setty.config
+      .setty
 </pre>
 </div>
 
@@ -225,34 +231,33 @@ Examples of path file content(based on above project structure):</p>
 <code>../settings</code> (relative path should not starts from slash, because it will be treat as absolute path)</li>
 </ul><h2>Setty and version of control </h2>
 
-<p>The .setty file should not be under your source control system, because in most situations developers and different environments has different paths within .setty and you will continuously merge this file. 
-Same apply for any .config file, because setty always regenerate it you need add it to ignore as well.</p>
+<p>The .setty file should not be under your source control system, because in most situations developers and different environments has different paths within .setty and you will have conflicts each time when you pulling latest version. 
+Same apply for any *.config file, because Setty always regenerate it you need add it to ignore as well.</p>
 
 <h2>How to install the Setty project</h2>
 
-<p>Before run solution you have to install some tools. If you have some of them just skip step.</p>
+<p>Before run solution you have to install some tools. If you have some of them already installed - just skip a step.</p>
 
-<ol>
-<li>
-<p>Clone project from github</p>
+<p>1.Clone the project from github:</p>
 
 <p><code>git clone git@github.com:paralect/setty.git</code></p>
-</li>
-<li><p><a href="http://www.microsoft.com/en-us/download/details.aspx?id=17630">Download</a> and install ILMerge. It used to merge some external libraries into single .exe file.</p></li>
-<li><p><a href="https://github.com/downloads/loresoft/msbuildtasks/MSBuild.Community.Tasks.v1.4.0.42.msi"> Download </a> and install MsBuild community tasks.
-Above three steps should be enough to open and compile all solution projects except VS addin project.</p></li>
-<li><p>To open Setty.VsAddin project <a href="http://www.microsoft.com/en-us/download/details.aspx?id=21835">download</a> and install visual studio sdk.
-<a href="http://visualstudiogallery.msdn.microsoft.com/e9f40a57-3c9a-4d61-b3ec-1640c59549b3/">Donwload</a> and install VSPackage Builder plugin</p></li>
-<li><p>Restart Visual studio and open solution again. Congratulations! You are done!</p></li>
-</ol><h2>Extend Setty with you favorite transformation language</h2>
 
-<p>Fork setty project, install it first.</p>
+<p>2.<a href="http://www.microsoft.com/en-us/download/details.aspx?id=17630">Download</a> and install ILMerge. It used to merge some external libraries into single .exe file.</p>
 
-<p>To add new transformation language into the project open Setty Project within Setty solution and implement ITransformer interface (put realization and all related files under Engines folder)
+<p>3.<a href="https://github.com/downloads/loresoft/msbuildtasks/MSBuild.Community.Tasks.v1.4.0.42.msi"> Download </a> and install MsBuild community tasks.
+Above three steps should be enough to open and compile all solution projects except VS add-in project.</p>
+
+<p>4.To open Setty.VsAddin project <a href="http://www.microsoft.com/en-us/download/details.aspx?id=21835">download</a> and install visual studio sdk as well as <a href="http://visualstudiogallery.msdn.microsoft.com/e9f40a57-3c9a-4d61-b3ec-1640c59549b3/">VSPackage Builder</a> plugin</p>
+
+<p>5.Restart Visual studio and open solution again. Congratulations! You are done!</p>
+
+<h2>Extend Setty with your favorite transformation engine</h2>
+
+<p>Fork the Setty project and install it.</p>
+
+<p>To add new transformation language into the project open Setty Project within Setty solution and implement <code>ITransformer</code> interface (put realization and all related files under Engines folder).
 This interface has one method <code>void Transform(String inputFilePath, String outputFilePath, KeyValueConfigurationCollection settings)</code> 
-Transformer accept path to the config file, transform it with key/value settings and save result to the output config file. 
-Also in interface you need to specify <code>ConfigExtention</code> for a new engine (for example: xslt, cshtml). Setty will automatically choose transformer by ConfigExtention
-Once interface implemented add new engine config files names into <code>SettyConstants.SearchConfigsNames</code>. </p>
+Transformer accept path to the config file, transform it with key/value settings and save result to the output config file. Also in interface you need to specify <code>ConfigExtention</code> for a new engine (for example: xslt, cshtml). Setty will automatically choose transformer by ConfigExtention property. Once interface implemented add new engine config files names into <code>SettyConstants.SearchConfigsNames</code>. For more details just look into the current implementations for razor and xslt.</p>
 
 <p>All externals libs should be merged into the Setty.dll and Setty.exe files. To add them unload Setty project and modify following section at the bottom of .csproj file. After this do the same at Setty.Host project.</p>
 
@@ -272,12 +277,12 @@ Once interface implemented add new engine config files names into <code>SettyCon
 </div>
 
 
-<p>Conratulations! You are done. <a href="https://help.github.com/articles/using-pull-requests/">Send pull request</a> to us and we will merge it in.</p>
+<p>Congratulations! You are done. <a href="https://help.github.com/articles/using-pull-requests/">Send us pull request</a> and we will merge it in.</p>
 
-<h2>Setty and nuget</h2>
+<h2>Setty and NuGet</h2>
 
-<p>Some nugets automatically can modify your config file, but because of setty regenerate config files you can loose these changes on next build.
-So developer should manually copy nuget config changes into setty config file. </p>
+<p>Some nugets can automatically modify your config files, but because of Setty always regenerate them you can loose these changes on next build.
+So developer should manually copy config changes made by nuget  into setty config file. </p>
 
 <p>This is not always bad, because some of the nugets can do crazy things with your config and add stuff that you don't like to see in config.</p>
 
