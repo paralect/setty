@@ -1,6 +1,6 @@
 Overview
 ---------------------
-Setty was designed to help manage project key/value settings. .NET config files differ for different deployment configurations. There should be a way to manage config files for different deployment configurations. Setty chose centralized approach by generating *.config files based on some template language. Currently there is support for razor and xslt transform engines. 
+Setty was designed to make managing project key/value settings easier. .NET config files may vary for different deployment configurations. Setty provides a way to manage config files for different deployment configurations. It uses centralised approach by generating *.config files based on some template language. Currently there is support for razor and xslt transform engines. 
 
 Setty with razor syntax require .net 4.0+. .net 2.0 version currently support only xslt transformation engine and has to be installed manually. See documentation below for details
 
