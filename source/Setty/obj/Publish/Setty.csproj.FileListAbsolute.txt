@@ -1,9 +1,0 @@
-D:\git\paralect\Setty\source\Setty\bin\Publish\Setty.dll
-D:\git\paralect\Setty\source\Setty\bin\Publish\Setty.pdb
-D:\git\paralect\Setty\source\Setty\bin\Publish\RazorEngine.dll
-D:\git\paralect\Setty\source\Setty\bin\Publish\Setty.Settings.dll
-D:\git\paralect\Setty\source\Setty\bin\Publish\System.Web.Razor.dll
-D:\git\paralect\Setty\source\Setty\bin\Publish\Setty.Settings.pdb
-D:\git\paralect\Setty\source\Setty\obj\Publish\ResolveAssemblyReference.cache
-D:\git\paralect\Setty\source\Setty\obj\Publish\Setty.dll
-D:\git\paralect\Setty\source\Setty\obj\Publish\Setty.pdb

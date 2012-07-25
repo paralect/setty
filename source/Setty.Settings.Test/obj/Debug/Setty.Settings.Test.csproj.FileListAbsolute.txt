@@ -1,9 +1,0 @@
-D:\git\paralect\setty\source\Setty.Settings.Test\obj\Debug\ResolveAssemblyReference.cache
-D:\git\paralect\setty\source\Setty.Settings.Test\bin\Debug\Setty.Settings.Test.dll.config
-D:\git\paralect\setty\source\Setty.Settings.Test\bin\Debug\Setty.Settings.Test.dll
-D:\git\paralect\setty\source\Setty.Settings.Test\bin\Debug\Setty.Settings.Test.pdb
-D:\git\paralect\setty\source\Setty.Settings.Test\bin\Debug\nunit.framework.dll
-D:\git\paralect\setty\source\Setty.Settings.Test\bin\Debug\Setty.Settings.dll
-D:\git\paralect\setty\source\Setty.Settings.Test\bin\Debug\Setty.Settings.pdb
-D:\git\paralect\setty\source\Setty.Settings.Test\obj\Debug\Setty.Settings.Test.dll
-D:\git\paralect\setty\source\Setty.Settings.Test\obj\Debug\Setty.Settings.Test.pdb

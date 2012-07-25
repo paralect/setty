@@ -1,7 +1,0 @@
-D:\git\paralect\Setty\source\Setty2\bin\Publish\Setty2.exe
-D:\git\paralect\Setty\source\Setty2\bin\Publish\Setty2.pdb
-D:\git\paralect\Setty\source\Setty2\bin\Publish\Setty.Settings.dll
-D:\git\paralect\Setty\source\Setty2\bin\Publish\Setty.Settings.pdb
-D:\git\paralect\Setty\source\Setty2\obj\Publish\ResolveAssemblyReference.cache
-D:\git\paralect\Setty\source\Setty2\obj\Publish\Setty2.exe
-D:\git\paralect\Setty\source\Setty2\obj\Publish\Setty2.pdb

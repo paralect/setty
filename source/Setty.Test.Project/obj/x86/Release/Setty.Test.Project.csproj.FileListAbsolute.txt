@@ -1,6 +1,0 @@
-D:\git\paralect\Setty\source\Setty.Test.Project\bin\Release\Setty.Test.Project.exe.config
-D:\git\paralect\Setty\source\Setty.Test.Project\bin\Release\Setty.Test.Project.exe
-D:\git\paralect\Setty\source\Setty.Test.Project\bin\Release\Setty.Test.Project.pdb
-D:\git\paralect\Setty\source\Setty.Test.Project\obj\x86\Release\ResolveAssemblyReference.cache
-D:\git\paralect\Setty\source\Setty.Test.Project\obj\x86\Release\Setty.Test.Project.exe
-D:\git\paralect\Setty\source\Setty.Test.Project\obj\x86\Release\Setty.Test.Project.pdb

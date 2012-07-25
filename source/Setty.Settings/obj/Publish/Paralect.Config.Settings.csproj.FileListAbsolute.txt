@@ -1,5 +1,0 @@
-D:\git\paralect\Paralect.Config\source\Paralect.Config.Settings\bin\Publish\Paralect.Config.Settings.dll
-D:\git\paralect\Paralect.Config\source\Paralect.Config.Settings\bin\Publish\Paralect.Config.Settings.pdb
-D:\git\paralect\Paralect.Config\source\Paralect.Config.Settings\obj\Publish\ResolveAssemblyReference.cache
-D:\git\paralect\Paralect.Config\source\Paralect.Config.Settings\obj\Publish\Paralect.Config.Settings.dll
-D:\git\paralect\Paralect.Config\source\Paralect.Config.Settings\obj\Publish\Paralect.Config.Settings.pdb

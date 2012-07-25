@@ -1,5 +1,0 @@
-D:\git\paralect\Setty\source\Setty.Settings\bin\Debug\Setty.Settings.dll
-D:\git\paralect\Setty\source\Setty.Settings\bin\Debug\Setty.Settings.pdb
-D:\git\paralect\Setty\source\Setty.Settings\obj\Debug\ResolveAssemblyReference.cache
-D:\git\paralect\Setty\source\Setty.Settings\obj\Debug\Setty.Settings.dll
-D:\git\paralect\Setty\source\Setty.Settings\obj\Debug\Setty.Settings.pdb
