@@ -48,19 +48,10 @@
     <None Include="Settings\App.config" />
     <None Include="Settings\Integration\App.config" />
     <None Include="Settings\Production\App.config" />
-    <None Include="Settings\Profiles\AlexPatsino\App.config" />
-    <None Include="Settings\Profiles\AndrewAndrushkevich\App.config" />
     <None Include="Settings\Profiles\AndrewOrsich\App.config" />
-    <None Include="Settings\Profiles\ArtemijKozlovsky\App.config" />
     <None Include="Settings\Profiles\DmitrySchetnikovich\App.config" />
-    <None Include="Settings\Profiles\PranavDave\App.config" />
-    <None Include="Settings\Profiles\ShaleenShah\App.config" />
-    <None Include="Settings\Stage\App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App.config.xslt">
-      <SubType>Designer</SubType>
-    </Content>
     <None Include="App.config.cshtml" />
   </ItemGroup>
   <ItemGroup />

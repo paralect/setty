@@ -6,6 +6,8 @@ using System.Linq;
 using System.Xml;
 using System.Xml.Xsl;
 using RazorEngine;
+using RazorEngine.Configuration;
+using RazorEngine.Templating;
 using Setty.Utils;
 
 namespace Setty.Engines.MvcRazor
@@ -22,12 +24,16 @@ namespace Setty.Engines.MvcRazor
 
             using (var outputWriter = XmlWriter.Create(outputPath, writerSettings))
             {
-                var template = System.IO.File.ReadAllText(configPath);
-                var model = MapSettings(settings);
+                var config = new FluentTemplateServiceConfiguration(
+                        c => c.WithEncoding(Encoding.Raw));
 
-                string result = Razor.Parse(template, model);
-
-                outputWriter.WriteRaw(result);
+                using (var service = new TemplateService(config))
+                {
+                    var template = System.IO.File.ReadAllText(configPath);
+                    var model = MapSettings(settings);
+                    string result = service.Parse(template, model);
+                    outputWriter.WriteRaw(result);
+                }
             }
         }
 
@@ -52,7 +58,7 @@ namespace Setty.Engines.MvcRazor
         {
             var res = settings.AllKeys.ToDictionary(key => key, key => settings[key].Value);
 
-            res.Add("AppSettings", SettingsHelper.GetApplicationSettingsXmlString(settings));
+            res.Add("ApplicationSettings", SettingsHelper.GetApplicationSettingsXmlString(settings));
 
             return res;
         }
