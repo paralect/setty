@@ -136,6 +136,10 @@ Xslt transformation engine:
 
 ```
 
+Updates
+---------------------
+1. 09/25/2012 -- VS Plugin for visual studio 2012
+
 Read <a href="http://paralect.github.com/setty">more</a> documentation on a Setty site.
 
   
