@@ -133,7 +133,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\.build\MSBuild.Community.Tasks.Targets" />
+    <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
   <Target Name="AfterBuild" Condition="$(Configuration) == 'Publish'">
     <ItemGroup>
       <InputAssemblies Include="$(OutputPath)\Setty.Host.exe" />

@@ -92,9 +92,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\.build\MSBuild.Community.Tasks.Targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
   <!-- Task write simplie string to-->
-  <UsingTask TaskName="CreateConfigFile" TaskFactory="CodeTaskFactory" AssemblyFile="..\.build\Microsoft.Build.Tasks.v4.0.dll">
+  <UsingTask TaskName="CreateConfigFile" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
     <ParameterGroup>
       <ConfigPath ParameterType="System.String" Required="true" />
       <SettingsPath ParameterType="System.String" Required="true" />
