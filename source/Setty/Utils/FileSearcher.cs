@@ -26,10 +26,11 @@ namespace Setty.Utils
 
             foreach (var fileName in fileNames)
             {
-                var path = Path.Combine(root.FullName, fileName);
-
-                if (File.Exists(path))
-                    list.Add(path);
+                var files = root.GetFiles(fileName);
+                foreach (var file in files)
+                {
+                    list.Add(file.FullName);
+                }
             }
 
             if (deep)

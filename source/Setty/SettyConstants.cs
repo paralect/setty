@@ -13,25 +13,8 @@ namespace Setty
             {
                 return new List<string>()
                 {
-                    "Web.config.cshtml", 
-                    "App.config.cshtml",
-                    "NLog.config.cshtml",
-                    "Web.config.xslt", 
-                    "App.config.xslt",
-                    "NLog.config.xslt",
-                };
-            }
-        }
-
-        public static List<string> SupportedConfigNames
-        {
-            get
-            {
-                return new List<string>()
-                {
-                    "Web.config", 
-                    "App.config",
-                    "NLog.config"
+                    "*.config.cshtml", 
+                    "*.config.xslt",
                 };
             }
         }
