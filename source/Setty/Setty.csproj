@@ -70,6 +70,7 @@
     <Compile Include="Engines\MvcRazor\RazorTransformer.cs" />
     <Compile Include="ITransformer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsModel.cs" />
     <Compile Include="SettyConstants.cs" />
     <Compile Include="Transformer.cs" />
     <Compile Include="TransformerSelector.cs" />

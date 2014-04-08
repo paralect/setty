@@ -54,13 +54,13 @@ namespace Setty.Engines.MvcRazor
         //    return expandoDictionary as dynamic;
         //}
 
-        private Dictionary<string, string> MapSettings(KeyValueConfigurationCollection settings)
+        private SettingsModel MapSettings(KeyValueConfigurationCollection settings)
         {
             var res = settings.AllKeys.ToDictionary(key => key, key => settings[key].Value);
 
             res.Add("ApplicationSettings", SettingsHelper.GetApplicationSettingsXmlString(settings));
 
-            return res;
+            return new SettingsModel(res);
         }
     }
 }
