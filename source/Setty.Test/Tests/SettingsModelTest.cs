@@ -14,7 +14,7 @@ namespace Setty.Test.Tests
             {
                 var t = model["test"];
             });
-            Assert.AreEqual("Key test was not found in settings file", ex.Message);
+            Assert.AreEqual("Key \"test\" was not found in settings file", ex.Message);
         } 
         
         [Test]
@@ -25,7 +25,7 @@ namespace Setty.Test.Tests
             {
                 var t = model["AnotherKey"];
             });
-            Assert.AreEqual("Key AnotherKey was not found in settings file", ex.Message);
+            Assert.AreEqual("Key \"AnotherKey\" was not found in settings file", ex.Message);
         }
     }
 }

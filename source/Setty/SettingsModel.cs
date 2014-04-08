@@ -17,7 +17,7 @@ namespace Setty
             {
                 if (!_settings.ContainsKey(key))
                 {
-                    throw new KeyNotFoundException(string.Format("Key {0} was not found in settings file", key));
+                    throw new KeyNotFoundException(string.Format("Key \"{0}\" was not found in settings file", key));
                 }
                 return _settings[key];
             }
